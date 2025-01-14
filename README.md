@@ -41,9 +41,15 @@ Have you ever played the New York Times word games? Word games like this are gro
 
 ### Design
 
-![Design image](readme_imgs/placeholder.png)
+<img src="readme_imgs/spelling_bee.png" alt="image of spelling bee game from NYT" width="200" height="350">
 
-shown above is the format of the NYT game
+shown above is the format of the NYT game. Desirable traits to emulate are the clean and simple interface, the lack of ads (although ads are displayed between games) and the ability to switch between light and dark mode  
+
+shown below is a hand sketch of what the alphabet game might look like.  
+<img src="readme_imgs/sketch1.jpg" alt="hand sketch of app layout" width="400" height="600">  
+
+shown below is an additional hand sketch showing how the application will reshape when used with an on-screen keyboard on a mobile phone  
+<img src="readme_imgs/sketch2.jpg" alt="hand sketch of app layout with on-screen keyboard" width="400" height="600">
 
 ```mermaid
 sequenceDiagram
