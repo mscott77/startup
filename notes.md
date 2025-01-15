@@ -8,6 +8,24 @@
 - [Canvas](https://byu.instructure.com)
 - [MDN](https://developer.mozilla.org)
 
+
+## Web API for word generation/checking
+- word generators  
+    - [an ai based word generator from chat-gpt](https://github.com/MaksimPegov/ai-words-generator-api) -  only generates up to 10 words
+    - [hyperWrite](https://www.hyperwriteai.com/aitools/topic-specific-vocabulary-builder)
+    - [another AI tool](https://galaxy.ai/ai-vocabulary-list-generator)
+    - [datamuse](https://www.datamuse.com/api/) 
+- rather than find a list of words under a given topic, it uses heirarchy to determine whether a certain word fits within another word
+    - [WordsAPI](https://www.wordsapi.com/) - tried it but it's kinda trash
+    - [uClasify](https://uclassify.com/browse/uclassify/topics) - only classifies into a few categories... :/
+- it might be easier to just make my own API for words that are generated 
+- OR just use the chat-GPT API and send it questions like this:
+    - `respond with 1 for yes, 0 for no to the following question: " is 'cocker spaniel' in the category 'dog breeds'?"`
+    - this might interfere with gameplay because you'll have to wait for the answer from chatGPT every time you enter a word. but it's also the best thing I've got so far
+    - consider using 'gpt-40-mini' (only 15 cents for 1M input tokens - about 30,000 questions)
+      ($1.00 would get you (1/.15)*1M = 6,666,666 input tokens * (1 question/30 tokens) = 222,222 questions * (1 game / 26 questions) = 8,547 games )
+
+
 ## AWS
 
 My IP address is: 54.81.96.130

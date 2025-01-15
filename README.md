@@ -54,19 +54,8 @@ I am going to use the required technologies in the following ways.
 - **CSS** - creating the clean, modern look from NYT games will be done using CSS
 - **React** - going from login page to main gameplay to leaderboard will be done using React routing
 - **Service** - I may implement multiple local services for various tasks. 
-                as for the third party service I'll probably use one of the following to generate lists of words for a given topic.
-    - word generators  
-        - [an ai based word generator from chat-gpt](https://github.com/MaksimPegov/ai-words-generator-api) -  only generates up to 10 words
-        - [hyperWrite](https://www.hyperwriteai.com/aitools/topic-specific-vocabulary-builder)
-        - [another AI tool](https://galaxy.ai/ai-vocabulary-list-generator)
-        - [datamuse](https://www.datamuse.com/api/) 
-    - rather than find a list of words under a given topic, it uses heirarchy to determine whether a certain word fits within another word
-        - [WordsAPI](https://www.wordsapi.com/) - tried it but it's kinda trash
-        - [uClasify](https://uclassify.com/browse/uclassify/topics) - only classifies into a few categories... :/
-    - it might be easier to just make my own API for words that are generated 
-    - OR just use the chat-GPT API and send it questions like this:
-        - `respond with 1 for yes, 0 for no to the following question: " is 'cocker spaniel' in the category 'dog breeds'?"`
-        - this might interfere with gameplay because you'll have to wait for the answer from chatGPT every time you enter a word. but it's also the best thing I've got so far
+                as for the third party service I'll probably use [one of the following](notes.md#web-api-for-word-generationchecking) to generate lists of words for a given topic.
+
                  
 - **DB/Login** - ability for users to log into their account so they can view their high scores and such
 - **WebSocket** - play against your friends in realtime. two "current letter progress" blocks will be displayed at the top of the screen. one for you and one for a friend you're playing against
