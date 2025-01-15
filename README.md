@@ -13,22 +13,10 @@ mentally stimulating in a positive way. Since this game isn't provided anywhere 
 Since the most user friendly way to present the game is in my opinion a mobile app, the web application I design for the game will be targeted 
 towards mobile phone screen sizes so that users can have a similarly clean and hassle free experience.
 
-<!--
-> [!NOTE]
->  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
-
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
-
--->
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
->  Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
-
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
-
 - [x] Proper use of Markdown
 - [x] A concise and compelling elevator pitch
 - [ ] Description of key features
@@ -45,35 +33,43 @@ Have you ever played the New York Times word games? Word games like this are gro
 
 shown above is the format of the NYT game. Desirable traits to emulate are the clean and simple interface, the lack of ads (although ads are displayed between games) and the ability to switch between light and dark mode  
 
-shown below is a hand sketch of what the alphabet game might look like.  
-<img src="readme_imgs/sketch1.jpg" alt="hand sketch of app layout" width="400" height="600">  
-
-shown below is an additional hand sketch showing how the application will reshape when used with an on-screen keyboard on a mobile phone  
+below on the left is a sketch of the main page layout - on the right is what it will look like with an on-screen keyboard (for mobile phones)  
+<img src="readme_imgs/sketch1.jpg" alt="hand sketch of app layout" width="400" height="600">
 <img src="readme_imgs/sketch2.jpg" alt="hand sketch of app layout with on-screen keyboard" width="400" height="600">
 
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Users log into account to keep track of scores, history, and to compete with other players
+- Users play the "alphabet game" by listing words that start with each letter of the alphabet that have to do with that days topic
+- There is a new topic every day, and the list of words is either extensive or open to interpretation by a AI model of choice
+    - I don't want to have to manually create lists of words under a given topic. at least not at this phase in the applications development
+- Users can compete against eachother to finish the game the fastest
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - main structure of all webpages will use HTML
+- **CSS** - creating the clean, modern look from NYT games will be done using CSS
+- **React** - going from login page to main gameplay to leaderboard will be done using React routing
+- **Service** - I may implement multiple local services for various tasks. 
+                as for the third party service I'll probably use one of the following to generate lists of words for a given topic.
+    - word generators  
+        - [an ai based word generator from chat-gpt](https://github.com/MaksimPegov/ai-words-generator-api) -  only generates up to 10 words
+        - [hyperWrite](https://www.hyperwriteai.com/aitools/topic-specific-vocabulary-builder)
+        - [another AI tool](https://galaxy.ai/ai-vocabulary-list-generator)
+        - [datamuse](https://www.datamuse.com/api/) 
+    - rather than find a list of words under a given topic, it uses heirarchy to determine whether a certain word fits within another word
+        - [WordsAPI](https://www.wordsapi.com/) - tried it but it's kinda trash
+        - [uClasify](https://uclassify.com/browse/uclassify/topics) - only classifies into a few categories... :/
+    - it might be easier to just make my own API for words that are generated 
+    - OR just use the chat-GPT API and send it questions like this:
+        - `respond with 1 for yes, 0 for no to the following question: " is 'cocker spaniel' in the category 'dog breeds'?"`
+        - this might interfere with gameplay because you'll have to wait for the answer from chatGPT every time you enter a word. but it's also the best thing I've got so far
+                 
+- **DB/Login** - ability for users to log into their account so they can view their high scores and such
+- **WebSocket** - play against your friends in realtime. two "current letter progress" blocks will be displayed at the top of the screen. one for you and one for a friend you're playing against
 
 ## 🚀 AWS deliverable
 
