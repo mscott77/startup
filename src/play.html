@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fido</title>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Fido<sup>&reg;</sup></h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="scores.html">Scores</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <div class="players">
+        Player:
+        <span class="player-name">Mystery player</span>
+      </div>
+      <ul class="notification">
+        <li class="player-name">Tim started a new game</li>
+        <li class="player-name">Ada started a new game</li>
+        <li class="player-name">Tim scored 337</li>
+      </ul>
+
+      <!-- More formatting with old style HTML -->
+      <br />
+
+      <div>
+        <label for="count">Score</label>
+        <input type="text" id="count" value="--" readonly />
+      </div>
+
+      <br />
+
+      <div>
+        <button id="reset-button">Reset</button>
+      </div>
+
+      <br />
+
+      <style>
+
+        :root {
+                --radius: 20px; /* Define the global border-radius variable */
+            }
+
+        button {
+            padding: 10px 10px;
+            margin: 2px;
+            border: 2px solid #a8cfff; /* Border color */
+            background-color: #a8cfff; /* Background color */
+            color: white; /* Text color */
+            border-radius: var(--radius); /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            width: 200px;
+            height: 200px;
+            overflow: hidden; /* Crop image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          }
+
+          button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3; /* Darker border on hover */
+          }
+
+          #reset-button {
+            width: 100px;
+            height: 50px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius)
+          }
+      </style>
+
+      <div>
+        <table>
+          <tr>
+            <td>
+              <button>
+                <img src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                alt="Button image">
+              </button>
+            </td>
+            <td>
+              <button>
+                <img src="https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                alt="Button image">
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button>
+                <img src="https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                alt="Button image">
+              </button>
+            </td>
+            <td>
+              <button>
+                <img src="https://images.pexels.com/photos/194505/pexels-photo-194505.png?auto=compress&cs=tinysrgb&w=600" 
+                alt="Button image">
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Author Name(s)</span>
+      <br />
+      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
+    </footer>
+  </body>
+</html>
