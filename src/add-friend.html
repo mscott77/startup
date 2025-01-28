@@ -2,58 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link rel="icon" href="favicon.ico" />
+    <title>Alphabet Game</title>
+    <link rel="icon" href="imgs/favicon.ico" />
   </head>
   <body>
     <header>
-        <!-- Navigation elements -->
-        <nav>
-          <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-          <menu>
-            <li><a href="index.html">Login</a></li>
-            <li><a href="play.html">Play</a></li>
-            <li><a href="scores.html">Leaderboard</a></li>
-            <li><a href="friends.html">Friends</a></li>
-            <li><a href="about.html">About</a></li>
-          </menu>
-        </nav>
-  
-        <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-        <hr />
-      </header>
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">Login</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="scores.html">Leaderboard</a></li>
+          <li><a href="friends.html">Friends</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
 
     <main>
-      <h1>How To Play</h1>
-
-      <h3>Rules</h3>
-      <li>
-        Each day you will be challenged to think of 26 words that are related to that days topic.
-      </li>
-      <li>
-        each word must start with a different letter of the alphabet
-      </li>
-      <li>
-        you must enter the words in alphabetical order
-      </li>
-      <li>
-        q,x,z are not required, but will give you bonus points
-      </li>
-      <li>
-        race against the clock to get the fastest time!
-      </li>
-
-      <h3>Playing With Friends</h3>
-        <li>
-          the game is much more fun if you <a href="add-friend.html">add some friends</a>
-        </li>
-        <li>
-          compare your time to your friends on the <a href="scores.html">leaderboard</a>
-        </li>
-        <li>
-          play against your friends in realtime by <a>inviting them to a game</a>
-        </li>
+      <h1>Login To Play</h1>
+      <form method="get" action="play.html">
+        <div>
+          <span>@</span>
+          <input type="text" placeholder="your@email.com" />
+        </div>
+        <div>
+          <span>🔒</span>
+          <input type="password" placeholder="password" />
+        </div>
+        <button type="submit">Login</button>
+        <button type="submit">Create</button>
+      </form>
     </main>
 
     <footer>
@@ -62,5 +47,6 @@
       <br />
       <a href="https://github.com/mscott77/startup">GitHub</a>
     </footer>
+
   </body>
 </html>
