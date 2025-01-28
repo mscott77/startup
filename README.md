@@ -19,9 +19,9 @@ towards mobile phone screen sizes so that users can have a similarly clean and h
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 - [x] Proper use of Markdown
 - [x] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [X] Description of key features
+- [X] Description of how you will use each technology
+- [X] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
@@ -64,21 +64,21 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Server deployed and accessible with custom domain name** - [My server link](https://yourdomainnamehere.click).
+- [X] **Server deployed and accessible with custom domain name** - [My server link](https://startup.webdev260.click).
 
 ## 🚀 HTML deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [X] **HTML pages** - Added 7 HTML pages 
+- [X] **Proper HTML element usage** - used all the required html elements, and more!
+- [X] **Links** - header includes links to other pages. friends page includes a link to add friend page
+- [X] **Text** - text is minimal, but there is quite a bit of text in about.html
+- [X] **3rd party API placeholder** - the <Todays Topic> field will be populated using the 3rd party API
+- [X] **Images** - a gear icon is used next to the username in the header to indicate that clicking on the username (or gear) will take you to settings.
+- [X] **Login placeholder** - index.html is the login page
+- [X] **DB data placeholder** - friends.html and leaderboard.html will both access the database
+- [X] **WebSocket placeholder** - during gameplay, the 'opponent' alphabet will appear and be populated using the websocket. friends.html will also use the websocket for inviting friends to play against you
 
 ## 🚀 CSS deliverable
 
