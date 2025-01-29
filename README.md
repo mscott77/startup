@@ -1,7 +1,7 @@
 # Alphabet Game
-[My Website](https://startup.webdev260.click)
-[Simon](https://simon.webdev260.click)
-[My Notes](notes.md)
+[My Website](https://startup.webdev260.click)  
+[Simon](https://simon.webdev260.click)  
+[My Notes](notes.md)  
 
 ### Startup Description
 Mini word games like crosswords, wordsearches, have seen a recent growth in popularity as newspaper companies like the New York Times and 
