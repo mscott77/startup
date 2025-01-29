@@ -1,5 +1,6 @@
 # Alphabet Game
-
+[My Website](https://startup.webdev260.click)
+[Simon](https://simon.webdev260.click)
 [My Notes](notes.md)
 
 ### Startup Description
@@ -74,7 +75,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [X] **Proper HTML element usage** - used all the required html elements, and more!
 - [X] **Links** - header includes links to other pages. friends page includes a link to add friend page
 - [X] **Text** - text is minimal, but there is quite a bit of text in about.html
-- [X] **3rd party API placeholder** - the <Todays Topic> field will be populated using the 3rd party API
+- [X] **3rd party API placeholder** - the 'Todays Topic' field will be populated using the 3rd party API
 - [X] **Images** - a gear icon is used next to the username in the header to indicate that clicking on the username (or gear) will take you to settings.
 - [X] **Login placeholder** - index.html is the login page
 - [X] **DB data placeholder** - friends.html and leaderboard.html will both access the database
