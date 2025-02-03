@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    flex: 0 auto;
+    background-color: black;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    margin: 5px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 500px){
+    .user a {
+        font-size: 0;
+    }
+}
