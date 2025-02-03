@@ -3,8 +3,11 @@ body {
     flex-direction: column;
     font-family: sans-serif;
     margin: 0;
+    height: 100vh;
 }
 
+
+/*----------header------------*/
 header {
     flex: 0 auto;
     background-color: black;
@@ -43,4 +46,30 @@ header a {
     .user a {
         font-size: 0;
     }
+}
+
+/*----------main------------*/
+main {
+    flex-grow: 1;
+}
+
+
+/*----------footer------------*/
+footer {
+    background-color: black;
+}
+
+footer section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+footer span, footer a {
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
 }
