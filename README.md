@@ -83,14 +83,17 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ## 🚀 CSS deliverable
 
-For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+For this deliverable I added styling to all the pages.  
+I chose and stuck with a mustard color theme and rounded button design.  
+note that on the gameplay page, usually only 1 progress alphabet will show up, unless you're playing live against a friend.
+the disappearing of the opponent "hippocarcass123" progress alphabet will be implemented in javascript later.
 
 - [x] **Header, footer, and main content body** - sticky header and footer, main content fills page. nice color scheme
 - [x] **Navigation elements** - navbar styled horizontally
-- [x] **Responsive to window resizing** - designed for mobile phone but works on desktop
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Responsive to window resizing** - designed for mobile phone but works on desktop too
+- [x] **Application elements** - styled all pages in preperation for integration of all required elements
+- [x] **Application text content** - text is styled appropriately
+- [x] **Application images** - application does not make extensive use of images, but there are images for the favicon and user settings icon
 
 ## 🚀 React part 1: Routing deliverable
 
