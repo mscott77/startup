@@ -1,0 +1,19 @@
+main li button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0 6px;
+    height: 24px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+main li {
+    list-style: none;
+    padding: 8px 0;
+    text-align: center;
+}
+
+main h1 {
+    text-align: center;
+}
