@@ -5,8 +5,9 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alphabet Game</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="play.css">
   </head>
 
   <body>
@@ -28,7 +29,7 @@
 
     <main>
 
-      <div>
+      <div class="progress" id="player-progress">
         <p>Progress</p>
         <table>
           <tr>
@@ -63,7 +64,7 @@
         </table>
       </div>
 
-      <div>
+      <div class="progress" id="opponent-progress">
         <p>Opponent</p>
         <table>
           <tr>
@@ -98,17 +99,17 @@
         </table>
       </div>
 
-      <div>
-        <h1>&ltTodays Topic&gt</h1>
+      <div id="word-entry">
+        <h1>Fruits</h1>
         <form>
-          <input type="text" required>
-          <br>
-          <button>Submit</button>
+          <input type="text" required placeholder="I">
+          <button><strong>Submit</strong></button>
         </form>
       </div>
 
-      <br />
-
+      <div class="keyboard">
+        keyboard
+      </div>
       
 
       

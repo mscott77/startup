@@ -1,0 +1,80 @@
+#player-progress, #opponent-progress {
+    height: 60px;
+
+}
+
+main h1 {
+    margin: 0;
+}
+
+#word-entry {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#word-entry form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#word-entry input {
+    background-color: rgba(0,0,0,0);
+    height: 60px;
+    font-size: 60px;
+    animation: blink 1s infinite;
+    border: none;
+    margin: 20px 0;
+    text-align: center;
+}
+#word-entry input::placeholder {
+    color: black;
+    text-align: center;
+}
+
+#word-entry input:focus {
+    animation: none;
+    border: none;
+    outline: none;
+    caret-color: transparent;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+#word-entry button {
+    margin: 10px;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: large;
+}
+
+
+.keyboard {
+    height: 200px;
+    border: thin black solid;
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+}
+
+}

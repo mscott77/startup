@@ -85,9 +85,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - sticky header and footer, main content fills page. nice color scheme
+- [x] **Navigation elements** - navbar styled horizontally
+- [x] **Responsive to window resizing** - designed for mobile phone but works on desktop
 - [ ] **Application elements** - I did not complete this part of the deliverable.
 - [ ] **Application text content** - I did not complete this part of the deliverable.
 - [ ] **Application images** - I did not complete this part of the deliverable.

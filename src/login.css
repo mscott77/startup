@@ -41,12 +41,11 @@ form div input {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     border-width: 1px;
-    border: none;
-    background-color: rgba(100, 100, 100, 0.67);
+    border: thin black solid;
+    background-color: rgba(100, 100, 100, 0);
 }
 
 form div input:focus {
-    border: none;
     outline: none;
 }
 
