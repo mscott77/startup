@@ -1,8 +1,12 @@
 
+main {
+    background-color: #f7da21;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    width: 100%; /* Ensure form takes full width */
+    width: 100%; /* Ensure form takes full width f7da21 */
     max-width: 250px; /* Optional: limits the max width of the form */
     margin: 0 auto; /* Center the form horizontally */
 }
@@ -15,20 +19,22 @@ form div {
 }
 
 form span, form input {
-    height: 35px;
+    height: 40px;
     box-sizing: border-box;
 }
 
 form div span {
     margin: 0; /* Space between label and input */
-    padding: 0px 5px;
+    padding-right: 5px;
+    padding-left: 10px;
     height: 100%;
     font-weight: bold; /* Optional: Make labels bold */
-    background: rgb(195, 195, 195);
+    background: black;
+    color: white;
     display: inline-flex;
     align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     border: thin black solid;
     border-right: none;
 }
@@ -37,9 +43,20 @@ form div input {
     padding: 8px;
     width: 100%; /* Makes the input fields fill the width of their parent div */
     box-sizing: border-box; /* Ensures padding doesn't affect width */
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
     border-width: 1px;
+    border: none;
+    background-color: rgba(100, 100, 100, 0.67);
+}
+
+form div input:focus {
+    border: none;
+    outline: none;
+}
+
+form div input::placeholder {
+    color: black;
 }
 
 form button {
@@ -47,6 +64,9 @@ form button {
     margin: 5px 0; /* Space between buttons */
     width: 100%; /* Makes buttons fill the form width */
     box-sizing: border-box; /* Ensures padding doesn't affect width */
-    border-radius: 5px;
+    height: 40px;
+    border-radius: 25px;
     border-width: 1px;
+    background: black;
+    color: white;
 }
