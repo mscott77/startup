@@ -1,0 +1,12 @@
+.table-custom {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 80% !important;
+    max-width: 400px !important;
+}
+
+table td, table th{
+    text-align: center;
+}
