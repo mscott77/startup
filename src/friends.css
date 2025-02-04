@@ -21,6 +21,14 @@ form button {
     padding: 0 20px;
 }
 
+form button:hover {
+    background-color: #dfc30f;
+}
+
+table button:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
 table tr:nth-child(1) td:nth-child(3) {
     animation: double-pulse infinite 2s;
 }

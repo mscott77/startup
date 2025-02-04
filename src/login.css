@@ -18,6 +18,7 @@ form span, form input {
     box-sizing: border-box;
 }
 
+
 form div span {
     margin: 0; /* Space between label and input */
     padding-right: 5px;
@@ -60,7 +61,11 @@ form button {
     box-sizing: border-box; /* Ensures padding doesn't affect width */
     height: 40px;
     border-radius: 25px;
-    border-width: 1px;
+    border: none;
     background: black;
     color: white;
+}
+
+form button:hover {
+    background-color: rgba(0, 0, 0, 0.45);
 }

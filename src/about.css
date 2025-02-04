@@ -9,9 +9,7 @@ main li {
     background-color: black;
     color: white;
     border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    
+    text-align: center;    
 }
 
 main ul {
@@ -22,11 +20,17 @@ main ul {
 main li a {
     text-decoration: none;
     color: white;
+    display: block;
+    width: 100%;
 }
 
 .button {
     animation: pulse 6s infinite ease-in-out;
     margin-bottom: 6px;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.45);
 }
 
 li.button:nth-child(1) {
