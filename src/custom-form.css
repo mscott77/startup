@@ -1,0 +1,47 @@
+.custom-form {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px; /* Space between input fields */
+    align-items: center;
+}
+
+.custom-form span, .custom-form input {
+    height: 40px;
+    box-sizing: border-box;
+}
+
+
+.custom-form span {
+    margin: 0; /* Space between label and input */
+    padding-right: 5px;
+    padding-left: 10px;
+    height: 100%;
+    font-weight: bold; /* Optional: Make labels bold */
+    background: black;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: thin black solid;
+    border-right: none;
+}
+
+.custom-form input {
+    padding: 8px;
+    width: 100%; /* Makes the input fields fill the width of their parent div */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-width: 1px;
+    border: thin black solid;
+    background-color: rgba(100, 100, 100, 0);
+}
+
+.custom-form input:focus {
+    outline: none;
+}
+
+.custom-form input::placeholder {
+    color: black;
+}
