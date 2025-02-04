@@ -1,0 +1,16 @@
+.custom-table {
+    border-spacing: 10px;
+}
+
+.custom-table button:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.custom-table button {
+    background-color: black;
+    color: white;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    width: 100px;
+}
