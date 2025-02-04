@@ -28,7 +28,8 @@ main h1 {
     font-size: 60px;
     animation: blink 1s infinite;
     border: none;
-    margin: 20px 0;
+    margin: 10px 0;
+    margin-bottom: 0px;
     text-align: center;
 }
 #word-entry input::placeholder {
@@ -63,12 +64,10 @@ main h1 {
     font-size: large;
 }
 
-
-.keyboard {
-    height: 200px;
-    border: thin black solid;
-    width: 100%;
+#word-entry button:hover {
+    background-color: rgba(0, 0, 0, 0.45);
 }
+
 
 .progress {
     display: flex;
@@ -76,6 +75,7 @@ main h1 {
     align-items: center;
     justify-content: center;
     width: 90%;
+    max-width: 400px;
     margin: 4px 0;
 }
 
@@ -150,8 +150,47 @@ main h1 {
     padding: 0;
     margin: 6px 0;
 }
-
 #player-progress {
     border: solid black thin;
     border-radius: 20px;
+}
+
+
+
+/*------------------------------------KEYBOARD-----------------*/
+
+.keyboard {
+    height: 200px;
+    width: 100%;
+    max-width: 380px;
+    padding: 10px 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.keyboard-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.key {
+    border: none;
+    height: 35px;
+    width: 35px;
+    margin: 0 2px;
+    text-align: center;
+    align-content: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.key:hover {
+    background-color: rgba(0, 0, 0, 0.45);
 }
