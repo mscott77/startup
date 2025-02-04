@@ -1,6 +1,6 @@
 #player-progress, #opponent-progress {
-    height: 60px;
-
+    height: 70px;
+    padding: 2px 6px;
 }
 
 main h1 {
@@ -75,7 +75,7 @@ main h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     margin: 4px 0;
 }
 
@@ -90,20 +90,68 @@ main h1 {
     margin-bottom: 5px;
 }
 
+.top-row .cell:nth-child(1),
+.top-row .cell:nth-child(2),
+.top-row .cell:nth-child(3),
+.top-row .cell:nth-child(4){
+    background-color: black;
+    color: white;
+}
+
+.top-row .cell:nth-child(5){
+    border-width: 3px;
+    font-weight: bold;
+    animation: jump 5s infinite ease-in ;
+}
+
+@keyframes jump {
+    3% {
+        transform: translateY(-4px);
+    }
+    6% {
+        transform: translateY(0px);
+    }
+    9% {
+        transform: translateY(-2px);
+    }
+    12% {
+        transform: translateY(0px);
+    }
+    end {
+        transform: translateY(0px);
+    }
+}
+
 .cell {
-    font-size: 12px;
-    width: 20px;
-    height: 20px;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
     padding: 0;
     margin: 0;
     text-align: center;
     align-content: center;
     border: thin black solid;
     border-radius: 100%;
+    box-sizing: border-box;
 }
 
 
+/*----------to add opponent progress-----------*/
 
+/* comment this out */
+/*
 #opponent-progress{
     display: none;
+}
+*/
+
+/* uncomment this */
+#opponent-progress p {
+    padding: 0;
+    margin: 6px 0;
+}
+
+#player-progress {
+    border: solid black thin;
+    border-radius: 20px;
 }
