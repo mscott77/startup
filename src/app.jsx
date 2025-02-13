@@ -14,7 +14,7 @@ import { Settings } from './settings/settings';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="">
+      <div className="body">
         <header>
             <nav className="">
               <menu className="">
@@ -44,12 +44,12 @@ export default function App() {
                   </NavLink>
                 </li>
               </menu>
+              <div class="user">
+                <NavLink className="nav-link" to="settings">
+                  ladiesman217 <img src="gear.ico" height="15px"/> 
+                </NavLink>
+              </div>
             </nav>
-            <div class="user">
-              <NavLink className="nav-link" to="settings">
-                ladiesman217 <img src="gear.ico" height="15px"/> 
-              </NavLink>
-            </div>
           </header>
 
         <Routes>

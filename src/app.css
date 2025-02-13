@@ -1,54 +1,88 @@
+body {
+    margin: 0;
+}
+
 .body {
-  display: flex;
-  flex-direction: column;
-  min-width: 375px;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin: 0;
+    height: 100vh;
 }
 
+
+/*----------header------------*/
 header {
-  flex: 0 80px;
+    flex: 0 auto;
+    background-color: black;
 }
 
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 ;
+    margin-right: 10px;
+}
+
+header menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    margin: 5px;
+}
+
+
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 500px){
+    .user a {
+        font-size: 0;
+    }
+}
+
+/*----------main------------*/
 main {
-  flex: 1 calc(100vh - 110px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7da21;
 }
 
+
+
+/*----------footer------------*/
 footer {
-  flex: 0 30px;
+    background-color: black;
 }
 
-menu {
-  flex: 1;
-  display: flex;
-  /*  overwrite Bootstrap so the menu does not wrap */
-  flex-direction: row !important;
-  list-style: none;
+footer section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
 }
 
-.navbar-brand {
-  padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
-}
-
-menu .nav-item {
-  padding: 0 0.3em;
+footer span, footer a {
+    color: white;
 }
 
 footer a {
-  float: right;
-}
-
-@media (max-height: 600px) {
-  header {
-    display: none;
-  }
-  footer {
-    display: none;
-  }
-  main {
-    flex: 1 100vh;
-  }
+    text-decoration: none;
 }
