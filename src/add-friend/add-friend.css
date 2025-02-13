@@ -1,4 +1,4 @@
-main form button {
+.invite-button {
     background-color: transparent;
     border: thin black solid;
     height: 30px;
@@ -7,14 +7,9 @@ main form button {
     font-weight: bold;
 }
 
-form button:hover {
+.invite-button:hover {
     background-color: #dfc30f;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 

@@ -1,4 +1,4 @@
-form button {
+.button {
     margin-top: 50px;
     height: 50px;
     border-radius: 25px;
@@ -8,7 +8,7 @@ form button {
     padding: 0 20px;
 }
 
-form button:hover {
+.button:hover {
     background-color: #dfc30f;
 }
 

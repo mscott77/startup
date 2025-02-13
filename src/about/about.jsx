@@ -3,7 +3,7 @@ import './about.css'
 
 export function About() {
   return (
-    <main classNameName="">
+    <main className="">
       <h3>Rules</h3>
       <li>
         Each day you will be challenged to think of 26 words that are related to that days topic.
