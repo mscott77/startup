@@ -22,26 +22,20 @@ export function About() {
       </li>
 
       <h3>Playing With Friends</h3>
-        <ul>
-          <li className="button">
-            <a href="add-friend.html">
-              the game is much more fun if you <br/> 
+        <div className='about-buttons' >
+          <button>
+            the game is much more fun if you <br/> 
             <strong><em>add some friends</em></strong>
-            </a>
-          </li>
-          <li className="button">
-            <a href="leaderboard.html">
-              compare scores with friends on the <br/>
+          </button>
+          <button>
+            compare scores with friends on the <br/>
             <strong><em>leaderboard</em></strong>
-            </a>
-          </li>
-          <li className="button">
-            <a href="friends.html" >
-              play against your friends in realtime by <br/>
-              <strong><em>inviting them to a game</em></strong>
-            </a>
-          </li>
-        </ul>
+          </button>
+          <button>
+            play against your friends in realtime by <br/>
+            <strong><em>inviting them to a game</em></strong>
+          </button>
+        </div>
     </main>
   );
 }

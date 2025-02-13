@@ -24,24 +24,34 @@ main li a {
     width: 100%;
 }
 
-.button {
+button {
     animation: pulse 6s infinite ease-in-out;
-    margin-bottom: 6px;
+    margin: 10px 0;
+    background-color: black;
+    color: white;
+    border: none;
+    height: 60px;
+    border-radius: 30px;
 }
 
-.button:hover {
+button:hover {
     background-color: rgba(0, 0, 0, 0.45);
 }
 
-li.button:nth-child(1) {
+.about-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-buttons button:nth-child(1) {
     animation-delay: 0s;
 }
 
-li.button:nth-child(2) {
+.about-buttons button:nth-child(2) {
     animation-delay: 2s;
 }
 
-li.button:nth-child(3) {
+.about-buttons button:nth-child(3) {
     animation-delay: 4s;
 }
 
