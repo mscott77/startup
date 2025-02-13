@@ -44,7 +44,7 @@ export default function App() {
                   </NavLink>
                 </li>
               </menu>
-              <div class="user">
+              <div className="user">
                 <NavLink className="nav-link" to="settings">
                   ladiesman217 <img src="gear.ico" height="15px"/> 
                 </NavLink>
@@ -65,7 +65,7 @@ export default function App() {
 
         <footer>
           <section>
-            <span class="text-reset">Mason Scott</span>
+            <span className="text-reset">Mason Scott</span>
             <a href="https://github.com/mscott77/startup" target="_blank" rel="noopener noreferrer">GitHub</a>
           </section>
         </footer>
