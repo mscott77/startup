@@ -97,11 +97,11 @@ the disappearing of the opponent "hippocarcass123" progress alphabet will be imp
 
 ## 🚀 React part 1: Routing deliverable
 
-For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+fully transitioned over to react and vite. organized just like simon. also made some improvements to the css styles and organization due to overflowing style issues.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - Routing between login and voting components.
+- [x] **Bundled using Vite** - bundled is using vite
+- [x] **Components** - each page is a component in the now SPA
+- [x] **Router** - routing is setup in header, also on friends page and about page uses the `useNavite()` method from react
 
 ## 🚀 React part 2: Reactivity
 
