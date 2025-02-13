@@ -1,21 +1,32 @@
-.table-custom {
+
+.scores-page table {
     background-color: rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    border-collapse: collapse;
 }
 
-table {
-    width: 80% !important;
-    max-width: 400px !important;
-}
-
-table td, table th{
+.scores-page table td, .scores-page table th{
     text-align: center;
+    padding: 12px 15px;
+    border: thin solid black;
+    margin: 0;
 }
 
-header a:hover, footer a:hover {
+.scores-page table tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scores-page table th {
+    background-color: #333;
+    color: rgb(235, 235, 235);
+}
+
+.scores-page header a:hover, footer a:hover {
     text-decoration: none;
     color: white;
 }
 
-footer {
+.scores-page footer {
     color: white;
 }
