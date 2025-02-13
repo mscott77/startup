@@ -1,4 +1,4 @@
-main li button {
+.settings-page li button {
     background-color: black;
     color: white;
     border: none;
@@ -8,12 +8,12 @@ main li button {
     box-sizing: border-box;
 }
 
-main li {
+.settings-page li {
     list-style: none;
     padding: 8px 0;
     text-align: center;
 }
 
-main h1 {
+.settings-page h1 {
     text-align: center;
 }
