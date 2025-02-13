@@ -1,13 +1,13 @@
-#player-progress, #opponent-progress {
+.play-page #player-progress, #opponent-progress {
     height: 70px;
     padding: 2px 6px;
 }
 
-main h1 {
+.play-page main h1 {
     margin: 0;
 }
 
-#word-entry {
+.play-page #word-entry {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -15,14 +15,14 @@ main h1 {
     align-items: center;
 }
 
-#word-entry form {
+.play-page #word-entry form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#word-entry input {
+.play-page #word-entry input {
     background-color: rgba(0,0,0,0);
     height: 60px;
     font-size: 60px;
@@ -32,12 +32,12 @@ main h1 {
     margin-bottom: 0px;
     text-align: center;
 }
-#word-entry input::placeholder {
+.play-page #word-entry input::placeholder {
     color: black;
     text-align: center;
 }
 
-#word-entry input:focus {
+.play-page #word-entry input:focus {
     animation: none;
     border: none;
     outline: none;
@@ -53,7 +53,7 @@ main h1 {
     }
 }
 
-#word-entry button {
+.play-page #word-entry button {
     margin: 10px;
     height: 40px;
     width: 100px;
@@ -64,12 +64,12 @@ main h1 {
     font-size: large;
 }
 
-#word-entry button:hover {
+.play-page #word-entry button:hover {
     background-color: rgba(0, 0, 0, 0.45);
 }
 
 
-.progress {
+.play-page .progress {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,26 +79,26 @@ main h1 {
     margin: 4px 0;
 }
 
-.top-row, .bottom-row {
+.play-page .top-row, .bottom-row {
     width: 100%;
     display: flex;
     justify-content: space-between;
 
 }
 
-.top-row {
+.play-page .top-row {
     margin-bottom: 5px;
 }
 
-.top-row .cell:nth-child(1),
-.top-row .cell:nth-child(2),
-.top-row .cell:nth-child(3),
-.top-row .cell:nth-child(4){
+.play-page .top-row .cell:nth-child(1),
+.play-page .top-row .cell:nth-child(2),
+.play-page .top-row .cell:nth-child(3),
+.play-page .top-row .cell:nth-child(4){
     background-color: black;
     color: white;
 }
 
-.top-row .cell:nth-child(5){
+.play-page .top-row .cell:nth-child(5){
     border-width: 3px;
     font-weight: bold;
     animation: jump 5s infinite ease-in ;
@@ -122,7 +122,7 @@ main h1 {
     }
 }
 
-.cell {
+.play-page .cell {
     font-size: 14px;
     width: 24px;
     height: 24px;
@@ -146,11 +146,11 @@ main h1 {
 */
 
 /* uncomment this */
-#opponent-progress p {
+.play-page #opponent-progress p {
     padding: 0;
     margin: 6px 0;
 }
-#player-progress {
+.play-page #player-progress {
     border: solid black thin;
     border-radius: 20px;
 }
@@ -159,7 +159,7 @@ main h1 {
 
 /*------------------------------------KEYBOARD-----------------*/
 
-.keyboard {
+.play-page .keyboard {
     height: 200px;
     width: 100%;
     max-width: 380px;
@@ -170,14 +170,14 @@ main h1 {
     flex-direction: column;
 }
 
-.keyboard-row {
+.play-page .keyboard-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-bottom: 10px;
 }
 
-.key {
+.play-page .key {
     border: none;
     height: 35px;
     width: 35px;
@@ -191,6 +191,6 @@ main h1 {
     font-weight: bold;
 }
 
-.key:hover {
+.play-page .key:hover {
     background-color: rgba(0, 0, 0, 0.45);
 }
