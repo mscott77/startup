@@ -1,4 +1,4 @@
-form {
+.login-page .login-form {
     display: flex;
     flex-direction: column;
     width: 100%; /* Ensure form takes full width f7da21 */
@@ -8,7 +8,7 @@ form {
 
 
 
-form button {
+.login-page .login-form button {
     padding: 10px;
     margin: 5px 0; /* Space between buttons */
     width: 100%; /* Makes buttons fill the form width */
@@ -20,6 +20,6 @@ form button {
     color: white;
 }
 
-form button:hover {
+.login-page .login-form button:hover {
     background-color: rgba(0, 0, 0, 0.45);
 }
