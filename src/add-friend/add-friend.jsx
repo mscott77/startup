@@ -5,7 +5,7 @@ import '../custom-form.css'
 
 export function AddFriend() {
   return (
-    <main className="">
+    <main className="add-friend-page">
       <h1>Add Friend</h1>
         <div className="custom-form">
           <span>Username/Email</span>

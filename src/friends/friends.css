@@ -1,18 +1,21 @@
-.button {
+.friends-page .button {
     margin-top: 50px;
     height: 50px;
     border-radius: 25px;
     border: thin black solid;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
+    color: black;
     width: fit-content;
     padding: 0 20px;
 }
 
-.button:hover {
+
+
+.friends-page .button:hover {
     background-color: #dfc30f;
 }
 
-table tr:nth-child(1) td:nth-child(3) {
+.friends-page table tr:nth-child(1) td:nth-child(3) {
     animation: double-pulse infinite 2s;
 }
 

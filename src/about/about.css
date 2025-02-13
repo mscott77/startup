@@ -1,10 +1,10 @@
-main {
+.about-page {
     padding: 0 40px;
 }
 
-main li {
+.about-page li {
     list-style: none;
-    padding: 5px;
+    padding: 10px;
     margin: 2px 0;
     background-color: black;
     color: white;
@@ -12,19 +12,19 @@ main li {
     text-align: center;    
 }
 
-main ul {
+.about-page ul {
     margin: 0;
     padding: 0;
 }
 
-main li a {
+.about-page li a {
     text-decoration: none;
     color: white;
     display: block;
     width: 100%;
 }
 
-button {
+.about-page button {
     animation: pulse 6s infinite ease-in-out;
     margin: 10px 0;
     background-color: black;
@@ -34,24 +34,24 @@ button {
     border-radius: 30px;
 }
 
-button:hover {
+.about-page button:hover {
     background-color: rgba(0, 0, 0, 0.45);
 }
 
-.about-buttons {
+.about-page .about-buttons {
     display: flex;
     flex-direction: column;
 }
 
-.about-buttons button:nth-child(1) {
+.about-page .about-buttons button:nth-child(1) {
     animation-delay: 0s;
 }
 
-.about-buttons button:nth-child(2) {
+.about-page .about-buttons button:nth-child(2) {
     animation-delay: 2s;
 }
 
-.about-buttons button:nth-child(3) {
+.about-page .about-buttons button:nth-child(3) {
     animation-delay: 4s;
 }
 

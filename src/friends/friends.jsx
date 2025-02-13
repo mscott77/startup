@@ -7,7 +7,7 @@ export function Friends() {
   const navigate = useNavigate();
 
   return (
-    <main className="">
+    <main className="friends-page">
       <h1>Friends</h1>
       <table className="custom-table">
         <thead/>
