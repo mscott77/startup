@@ -49,9 +49,10 @@ export default function App() {
                 </li>
               </menu>
               <div className="user">
+                {userName &&
                 <NavLink className="nav-link" to="settings">
                   {userName} <img src="gear.ico" height="15px"/> 
-                </NavLink>
+                </NavLink>}
               </div>
             </nav>
           </header>
