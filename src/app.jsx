@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './app.css';
 
 // routing
@@ -12,6 +12,10 @@ import { Scores } from './scores/scores';
 import { Settings } from './settings/settings';
 
 export default function App() {
+
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || null)
+  const [password, setPassword] = React.useState(localStorage.getItem('password') || null)
+
   return (
     <BrowserRouter>
       <div className="body">
@@ -46,7 +50,7 @@ export default function App() {
               </menu>
               <div className="user">
                 <NavLink className="nav-link" to="settings">
-                  ladiesman217 <img src="gear.ico" height="15px"/> 
+                  {userName} <img src="gear.ico" height="15px"/> 
                 </NavLink>
               </div>
             </nav>
@@ -56,10 +60,10 @@ export default function App() {
           <Route path='/about' element={<About />} />
           <Route path='/add-friend' element={<AddFriend />} />
           <Route path='/friends' element={<Friends />} />
-          <Route path='/' element={<Login />} exact />
+          <Route path='/' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
           <Route path='/play' element={<Play />} />
           <Route path='/scores' element={<Scores />} />
-          <Route path='/settings' element={<Settings />} />
+          <Route path='/settings' element={<Settings userName={userName} password={password} />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
 
