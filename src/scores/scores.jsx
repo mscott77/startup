@@ -6,7 +6,7 @@ import './scores.css'
 export function Scores() {
   return (
     <main className="scores-page">
-      <h1>Leaderboard</h1>
+      <h1>Scores</h1>
       
       <table className="table">
         <thead className="table-dark">

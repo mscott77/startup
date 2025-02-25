@@ -8,8 +8,8 @@ export function AddFriend() {
     <main className="add-friend-page">
       <h1>Add Friend</h1>
         <div className="custom-form">
-          <span>Username/Email</span>
-          <input type="text" placeholder="friend / friend@friend.com" />
+          <span>Username</span>
+          <input type="text" placeholder="myFriend123" />
         </div>
         <button className='invite-button' type="submit">Invite</button>
 

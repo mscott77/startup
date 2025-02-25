@@ -8,8 +8,8 @@ export function Login() {
       <h1>Login To Play</h1>
       <div className='login-form'>
         <div className="custom-form">
-          <span>Email:</span>
-          <input type="text" placeholder="your@email.com" />
+          <span>Username:</span>
+          <input type="text" placeholder="username" />
         </div>
 
         <div className="custom-form">

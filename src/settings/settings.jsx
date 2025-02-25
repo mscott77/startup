@@ -7,7 +7,6 @@ export function Settings() {
       <div>
         <h1>User Info</h1>
         <li><strong>Username:</strong> ladiesman217</li>
-        <li><strong>Email:</strong> ladiesman217@gmail.com</li>
         <li><strong>Password:</strong> ******* <button>show</button></li>
       </div>
     </main>
