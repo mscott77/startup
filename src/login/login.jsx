@@ -25,19 +25,15 @@ export function Login( {setUserName, setPassword}) {
 
   function userNameTextChange(e) {
     const value = e.target.value;
-
     const filteredValue = value.replace(/[^a-zA-Z0-9]/g, '');
     setUserNameText(filteredValue);
-
     console.log(filteredValue);
   }
 
   function passwordTextChange(e) {
     const value = e.target.value;
-
     const filteredValue = value.replace(/[^a-zA-Z0-9]/g, '');
     setPasswordText(filteredValue);
-
     console.log(filteredValue);
   }
 

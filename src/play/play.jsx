@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './play.css'
 
 export function Play() {
+
+  const [entryText, setEntryText] = React.useState('');
+
+  function entryTextChange(e){
+    const value = e.target.value;
+    const filteredValue = value.replace(/[^a-zA-Z0-9]/g, '');
+    setEntryText(filteredValue);
+    console.log(filteredValue);
+  }
+
   return (
     <main className="play-page">
       <div className="progress" id="opponent-progress">
@@ -72,7 +82,12 @@ export function Play() {
       <div id="word-entry">
         <h1>Fruits</h1>
         <form>
-          <input type="text" required placeholder="I"/>
+          <input 
+            type="text" 
+            required placeholder="I" 
+            value={entryText}
+            onChange={entryTextChange}
+          />
           <button><strong>Submit</strong></button>
         </form>
       </div>
