@@ -7,9 +7,13 @@ export function Play() {
 
   function entryTextChange(e){
     const value = e.target.value;
-    const filteredValue = value.replace(/[^a-zA-Z0-9]/g, '');
+    const filteredValue = value.replace(/[^a-zA-Z]/g, '');
     setEntryText(filteredValue);
     console.log(filteredValue);
+  }
+
+  function builtInKeyboardKeypressed(key){
+    setEntryText(prevText => prevText + key);
   }
 
   return (
@@ -94,36 +98,37 @@ export function Play() {
 
       <div className="keyboard">
         <div className="keyboard-row">
-          <button className="key">Q</button>
-          <button className="key">W</button>
-          <button className="key">E</button>
-          <button className="key">R</button>
-          <button className="key">T</button>
-          <button className="key">Y</button>
-          <button className="key">U</button>
-          <button className="key">I</button>
-          <button className="key">O</button>
-          <button className="key">P</button>
+          {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'].map(letter => (
+            <button 
+              className="key" 
+              key={letter} 
+              onClick={() => builtInKeyboardKeypressed(letter)}
+            >
+              {letter}
+            </button>
+          ))}
         </div>
         <div className="keyboard-row">
-          <button className="key">A</button>
-          <button className="key">S</button>
-          <button className="key">D</button>
-          <button className="key">F</button>
-          <button className="key">G</button>
-          <button className="key">H</button>
-          <button className="key">J</button>
-          <button className="key">K</button>
-          <button className="key">L</button>
+          {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'].map(letter => (
+            <button 
+              className="key" 
+              key={letter} 
+              onClick={() => builtInKeyboardKeypressed(letter)}
+            >
+              {letter}
+            </button>
+          ))}
         </div>
         <div className="keyboard-row">
-          <button className="key">Z</button>
-          <button className="key">X</button>
-          <button className="key">C</button>
-          <button className="key">V</button>
-          <button className="key">B</button>
-          <button className="key">N</button>
-          <button className="key">M</button>
+          {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map(letter => (
+            <button 
+              className="key" 
+              key={letter} 
+              onClick={() => builtInKeyboardKeypressed(letter)}
+            >
+              {letter}
+            </button>
+          ))}
         </div>
       </div>
     </main>
