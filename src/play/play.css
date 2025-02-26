@@ -198,3 +198,13 @@
 .play-page .key:hover {
     background-color: rgba(0, 0, 0, 0.45);
 }
+
+.play-page .clear-key {
+    height: 50px;
+    width: 60px;
+    background-color: transparent;
+    border: thick black solid;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+}

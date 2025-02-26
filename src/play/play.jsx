@@ -16,6 +16,10 @@ export function Play({isMobileDevice}) {
     setEntryText(prevText => prevText + key);
   }
 
+  function removeCharacter(){
+    setEntryText(prevText => prevText.slice(0, -1));
+  }
+
   return (
     <main className="play-page">
       <div className="progress" id="opponent-progress">
@@ -103,7 +107,7 @@ export function Play({isMobileDevice}) {
               <button 
                 className="key" 
                 key={letter} 
-                onTouchStart={(e) => builtInKeyboardKeypressed(letter, e)}
+                onTouchStart={() => builtInKeyboardKeypressed(letter)}
               >
                 {letter}
               </button>
@@ -114,7 +118,7 @@ export function Play({isMobileDevice}) {
               <button 
                 className="key" 
                 key={letter} 
-                onTouchStart={(e) => builtInKeyboardKeypressed(letter, e)}
+                onTouchStart={() => builtInKeyboardKeypressed(letter)}
               >
                 {letter}
               </button>
@@ -125,11 +129,15 @@ export function Play({isMobileDevice}) {
               <button 
                 className="key" 
                 key={letter} 
-                onTouchStart={(e) => builtInKeyboardKeypressed(letter, e)}
+                onTouchStart={() => builtInKeyboardKeypressed(letter)}
               >
                 {letter}
               </button>
             ))}
+            <button 
+              className='key clear-key' 
+              onTouchStart={() => removeCharacter()}
+            > del </button>
           </div>
         </div>
       )}
