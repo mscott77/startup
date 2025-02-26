@@ -6,6 +6,11 @@
     height: 24px;
     border-radius: 12px;
     box-sizing: border-box;
+    margin-right: 5px;
+}
+
+.settings-page li button:active {
+    background-color: rgba(0, 0, 0, 0.45);
 }
 
 .settings-page li {
@@ -16,4 +21,11 @@
 
 .settings-page h1 {
     text-align: center;
+}
+
+.password-text {
+    display: inline-block;
+    min-width: 150px;
+    white-space: nowrap;
+    text-align: left;
 }
