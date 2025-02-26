@@ -1,18 +1,22 @@
 import React from 'react';
 import './login.css'
 import '../custom-form.css'
+import { useNavigate } from 'react-router-dom';
 
 export function Login( {setUserName, setPassword}) {
 
   const [userNameText, setUserNameText] = React.useState('');
   const [passwordText, setPasswordText] = React.useState('');
+  const navigate = useNavigate();
+
 
   function loginUser(){
     if (userNameText && passwordText) {
       setUserName(userNameText);
       localStorage.setItem('userName',userNameText);
       setPassword(passwordText);
-      localStorage.setItem('password', passwordText)
+      localStorage.setItem('password', passwordText);
+      navigate('/play')
     }
     else{
       alert('please enter username and password (only letters and numbers allowed)');

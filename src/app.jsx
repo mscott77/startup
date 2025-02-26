@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './app.css';
 
 // routing
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
 import { About } from './about/about';
 import { AddFriend } from './add-friend/add-friend';
 import { Friends } from './friends/friends';
@@ -13,8 +13,8 @@ import { Settings } from './settings/settings';
 
 export default function App() {
 
-  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || null)
-  const [password, setPassword] = React.useState(localStorage.getItem('password') || null)
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || null);
+  const [password, setPassword] = React.useState(localStorage.getItem('password') || null);
 
   return (
     <BrowserRouter>
