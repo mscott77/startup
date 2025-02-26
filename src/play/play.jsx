@@ -36,14 +36,26 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     const firstLetter = word[0];
     const acceptedWords = topicWords[firstLetter] || []; // Get words for that letter
 
+    if (firstLetter != currentPlayerLetter) {
+      setEntryText("")
+      console.log(`letter must start with ${currentPlayerLetter}`)
+      return
+    }
+
     if (acceptedWords.includes(word)) {
       console.log(`${word} is an accepted word! ✅`);
-    } else {
+      setCurrentPlayerLetter((prev)=>incrementLetter(prev));      
+    } 
+    else {
       console.log(`${word} is not in the list. ❌`);
     }
 
     setEntryText("")
   }
+
+    function incrementLetter(letter){
+      return String.fromCharCode(letter.charCodeAt(0) + 1)
+    }
 
   return (
     <main className="play-page">
