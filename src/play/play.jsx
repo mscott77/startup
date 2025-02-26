@@ -10,7 +10,6 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     const value = e.target.value;
     const filteredValue = value.replace(/[^a-zA-Z ]/g, '');
     setEntryText(filteredValue);
-    console.log(filteredValue);
   }
 
   function builtInKeyboardKeypressed(key){
@@ -19,6 +18,12 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
 
   function removeCharacter(){
     setEntryText(prevText => prevText.slice(0, -1));
+  }
+
+  function handleEnterPressed(e) {
+    if (e.key === "Enter"){
+      handleUserSubmit();
+    }
   }
 
   function handleUserSubmit(){
@@ -36,6 +41,8 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     } else {
       console.log(`${word} is not in the list. ❌`);
     }
+
+    setEntryText("")
   }
 
   return (
@@ -113,6 +120,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
             required placeholder="I" 
             value={entryText}
             onChange={entryTextChange}
+            onKeyDown={handleEnterPressed}
           />
           <button onClick={handleUserSubmit} ><strong>Submit</strong></button>
         </div>
@@ -125,7 +133,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
               <button 
                 className="key" 
                 key={letter} 
-                onTouchStart={() => builtInKeyboardKeypressed(letter)}
+                onTouchStart={() => builtInKeyboardKeypressed(letter.toLowerCase())}
               >
                 {letter}
               </button>
@@ -136,7 +144,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
               <button 
                 className="key" 
                 key={letter} 
-                onTouchStart={() => builtInKeyboardKeypressed(letter)}
+                onTouchStart={() => builtInKeyboardKeypressed(letter.toLowerCase())}
               >
                 {letter}
               </button>
@@ -147,7 +155,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
               <button 
                 className="key" 
                 key={letter} 
-                onTouchStart={() => builtInKeyboardKeypressed(letter)}
+                onTouchStart={() => builtInKeyboardKeypressed(letter.toLowerCase())}
               >
                 {letter}
               </button>

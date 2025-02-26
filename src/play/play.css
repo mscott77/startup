@@ -25,7 +25,8 @@
 .play-page #word-entry input {
     background-color: rgba(0,0,0,0);
     height: 40px;
-    font-size: 60px;
+    font-size: 30px;
+    font-style: italic;
     animation: blink 1s infinite;
     border: none;
     margin: 0px;
@@ -44,6 +45,7 @@
     caret-color: transparent;
 }
 
+/* stop the animation */
 .play-page #word-entry input:not(:placeholder-shown) {
     animation: none;
 }
