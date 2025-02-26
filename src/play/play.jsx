@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import './play.css'
+import topicWords from "../data/topicList.json"
 
-export function Play({isMobileDevice}) {
+export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLetter}) {
 
   const [entryText, setEntryText] = React.useState('');
 
   function entryTextChange(e){
     const value = e.target.value;
-    const filteredValue = value.replace(/[^a-zA-Z]/g, '');
+    const filteredValue = value.replace(/[^a-zA-Z ]/g, '');
     setEntryText(filteredValue);
     console.log(filteredValue);
   }
@@ -18,6 +19,23 @@ export function Play({isMobileDevice}) {
 
   function removeCharacter(){
     setEntryText(prevText => prevText.slice(0, -1));
+  }
+
+  function handleUserSubmit(){
+    const word = entryText.trim().toLowerCase();
+    if (!word) {
+      console.log("Please enter a word.");
+      return;
+    }
+
+    const firstLetter = word[0];
+    const acceptedWords = topicWords[firstLetter] || []; // Get words for that letter
+
+    if (acceptedWords.includes(word)) {
+      console.log(`${word} is an accepted word! ✅`);
+    } else {
+      console.log(`${word} is not in the list. ❌`);
+    }
   }
 
   return (
@@ -89,15 +107,15 @@ export function Play({isMobileDevice}) {
 
       <div id="word-entry">
         <h1>Fruits</h1>
-        <form>
+        <div className='form'>
           <input 
             type="text" 
             required placeholder="I" 
             value={entryText}
             onChange={entryTextChange}
           />
-          <button><strong>Submit</strong></button>
-        </form>
+          <button onClick={handleUserSubmit} ><strong>Submit</strong></button>
+        </div>
       </div>
 
       {isMobileDevice && (

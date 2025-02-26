@@ -16,6 +16,7 @@ export default function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || null);
   const [password, setPassword] = React.useState(localStorage.getItem('password') || null);
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
+  const [currentPlayerLetter, setCurrentPlayerLetter] = React.useState('a');
 
   function isMobile() {
     const isMobileDev = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
@@ -85,7 +86,12 @@ export default function App() {
           <Route path='/add-friend' element={<AddFriend />} />
           <Route path='/friends' element={<Friends />} />
           <Route path='/' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
-          <Route path='/play' element={<Play isMobileDevice = {isMobileDevice} />} />
+          <Route path='/play' element={
+            <Play 
+              isMobileDevice = {isMobileDevice} 
+              currentPlayerLetter = {currentPlayerLetter}
+              setCurrentPlayerLetter = {setCurrentPlayerLetter}
+            />} />
           <Route path='/scores' element={<Scores />} />
           <Route path='/settings' element={<Settings userName={userName} password={password} />} />
           <Route path='*' element={<NotFound />} />
