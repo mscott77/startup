@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './app.css';
 
 // routing
@@ -15,6 +15,29 @@ export default function App() {
 
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || null);
   const [password, setPassword] = React.useState(localStorage.getItem('password') || null);
+  const [isMobileDevice, setIsMobileDevice] = React.useState(false);
+
+  function isMobile() {
+    const isMobileDev = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
+    return isMobileDev || isSmallScreen;
+  }
+
+  function checkIfMobile() {
+    const isMobileVal = isMobile()
+    setIsMobileDevice(isMobileVal)
+    console.log(`on mobile device: ${isMobileVal}`)
+  }
+
+  useEffect(() => {
+
+    checkIfMobile();
+
+    window.addEventListener('resize', checkIfMobile);
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
 
   return (
     <BrowserRouter>
@@ -62,7 +85,7 @@ export default function App() {
           <Route path='/add-friend' element={<AddFriend />} />
           <Route path='/friends' element={<Friends />} />
           <Route path='/' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
-          <Route path='/play' element={<Play />} />
+          <Route path='/play' element={<Play isMobileDevice = {isMobileDevice} />} />
           <Route path='/scores' element={<Scores />} />
           <Route path='/settings' element={<Settings userName={userName} password={password} />} />
           <Route path='*' element={<NotFound />} />

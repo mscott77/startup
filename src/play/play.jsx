@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './play.css'
 
-export function Play() {
+export function Play({isMobileDevice}) {
 
   const [entryText, setEntryText] = React.useState('');
 
@@ -96,41 +96,43 @@ export function Play() {
         </form>
       </div>
 
-      <div className="keyboard">
-        <div className="keyboard-row">
-          {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'].map(letter => (
-            <button 
-              className="key" 
-              key={letter} 
-              onClick={() => builtInKeyboardKeypressed(letter)}
-            >
-              {letter}
-            </button>
-          ))}
+      {isMobileDevice && (
+        <div className="keyboard">
+          <div className="keyboard-row">
+            {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'].map(letter => (
+              <button 
+                className="key" 
+                key={letter} 
+                onTouchStart={(e) => builtInKeyboardKeypressed(letter, e)}
+              >
+                {letter}
+              </button>
+            ))}
+          </div>
+          <div className="keyboard-row">
+            {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'].map(letter => (
+              <button 
+                className="key" 
+                key={letter} 
+                onTouchStart={(e) => builtInKeyboardKeypressed(letter, e)}
+              >
+                {letter}
+              </button>
+            ))}
+          </div>
+          <div className="keyboard-row">
+            {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map(letter => (
+              <button 
+                className="key" 
+                key={letter} 
+                onTouchStart={(e) => builtInKeyboardKeypressed(letter, e)}
+              >
+                {letter}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="keyboard-row">
-          {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'].map(letter => (
-            <button 
-              className="key" 
-              key={letter} 
-              onClick={() => builtInKeyboardKeypressed(letter)}
-            >
-              {letter}
-            </button>
-          ))}
-        </div>
-        <div className="keyboard-row">
-          {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map(letter => (
-            <button 
-              className="key" 
-              key={letter} 
-              onClick={() => builtInKeyboardKeypressed(letter)}
-            >
-              {letter}
-            </button>
-          ))}
-        </div>
-      </div>
+      )}
     </main>
   );
 }

@@ -44,6 +44,10 @@
     caret-color: transparent;
 }
 
+.play-page #word-entry input:not(:placeholder-shown) {
+    animation: none;
+}
+
 @keyframes blink {
     0%, 100% {
         opacity: 0;
