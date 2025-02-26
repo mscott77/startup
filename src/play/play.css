@@ -96,15 +96,12 @@
     margin-bottom: 5px;
 }
 
-.play-page .top-row .cell:nth-child(1),
-.play-page .top-row .cell:nth-child(2),
-.play-page .top-row .cell:nth-child(3),
-.play-page .top-row .cell:nth-child(4){
+.play-page #player-progress .cell.cellCompleted{
     background-color: black;
     color: white;
 }
 
-.play-page .top-row .cell:nth-child(5){
+.play-page #player-progress .cell.cellCurrent{
     border-width: 3px;
     font-weight: bold;
     animation: jump 5s infinite ease-in ;

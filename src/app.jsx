@@ -16,7 +16,7 @@ export default function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || null);
   const [password, setPassword] = React.useState(localStorage.getItem('password') || null);
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
-  const [currentPlayerLetter, setCurrentPlayerLetter] = React.useState('a');
+  const [currentPlayerLetter, setCurrentPlayerLetter] = React.useState('m');
 
   function isMobile() {
     const isMobileDev = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);

@@ -53,9 +53,12 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     setEntryText("")
   }
 
-    function incrementLetter(letter){
-      return String.fromCharCode(letter.charCodeAt(0) + 1)
-    }
+  function incrementLetter(letter){
+    return String.fromCharCode(letter.charCodeAt(0) + 1)
+  }
+
+  // array of cell letters to be used for the player and opponent progress bars
+  const cellLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split("");
 
   return (
     <main className="play-page">
@@ -94,33 +97,32 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
 
       <div className="progress" id="player-progress">
         <div className="top-row">
-          <div className="cell">A</div>
-          <div className="cell">B</div>
-          <div className="cell">C</div>
-          <div className="cell">D</div>
-          <div className="cell">E</div>
-          <div className="cell">F</div>
-          <div className="cell">G</div>
-          <div className="cell">H</div>
-          <div className="cell">I</div>
-          <div className="cell">J</div>
-          <div className="cell">K</div>
-          <div className="cell">L</div>
-          <div className="cell">M</div>
+          {cellLetters.slice(0,13).map((letter) =>(
+            <div
+              className= {`
+                cell 
+                ${letter.toLowerCase() < currentPlayerLetter ? "cellCompleted" : ""}
+                ${letter.toLowerCase() === currentPlayerLetter ? "cellCurrent" : ""}
+              `}
+              key={letter}
+            >
+              {letter}
+            </div>
+          ))}
         </div>
         <div className="bottom-row">
-          <div className="cell">O</div>
-          <div className="cell">P</div>
-          <div className="cell">Q</div>
-          <div className="cell">R</div>
-          <div className="cell">S</div>
-          <div className="cell">T</div>
-          <div className="cell">U</div>
-          <div className="cell">V</div>
-          <div className="cell">W</div>
-          <div className="cell">X</div>
-          <div className="cell">Y</div>
-          <div className="cell">Z</div>
+          {cellLetters.slice(13).map((letter) =>(
+              <div
+                className= {`
+                  cell 
+                  ${letter.toLowerCase() < currentPlayerLetter ? "cellCompleted" : ""}
+                  ${letter.toLowerCase() === currentPlayerLetter ? "cellCurrent" : ""}
+                `}
+                key={letter}
+              >
+                {letter}
+              </div>
+            ))}
         </div>
       </div>
 
