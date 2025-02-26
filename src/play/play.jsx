@@ -152,6 +152,14 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
                 {letter}
               </button>
             ))}
+          </div>
+          <div className='spacebar-row'>
+            <button
+              className='key spacebar'
+              key={" "}
+              onTouchStart={() => builtInKeyboardKeypressed(" ")}
+            >
+            </button>
             <button 
               className='key clear-key' 
               onTouchStart={() => removeCharacter()}
