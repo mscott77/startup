@@ -1,0 +1,25 @@
+.about-page {
+    padding: 0 40px;
+}
+
+.about-page li {
+    list-style: none;
+    padding: 10px;
+    margin: 2px 0;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    text-align: center;    
+}
+
+.about-page ul {
+    margin: 0;
+    padding: 0;
+}
+
+.about-page li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+}

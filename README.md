@@ -148,8 +148,9 @@ also included explanation of how I'll still meet the project requirements
 
 > [!NOTE]
 > TECHNOLOGY CHANGE - since I'm not doing the friends functionality anymore I obviously can't use web socket to have two players 
-> face off against eachother in real time... so instead I'm just going to have the "bob joined the game" thing that the simon example
-> has. I know it's a copout but my app is already complicated as is.
+> face off against eachother in real time... so instead I'm just going to have a "suggestions" page where there's basically a live chat 
+> where anyone can make a suggestions for a topic. this will serve two purposes 1. allow players to "vote" on topics they want to see
+> in the future and 2. allow me to see what topics people want without having to setup a fancy admin login or something.
 
 #### old technology representation (doing away with)
 database: friends
@@ -158,7 +159,7 @@ service: chatGPT
 
 #### new technology representation (going forward with)
 database: word lists for each topic
-websocket: bob joined the game
+websocket: topic suggestions
 service:  dictionary q,x,z word generator
 
 

@@ -4,12 +4,13 @@ import './app.css';
 // routing
 import { BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
 import { About } from './about/about';
-import { AddFriend } from './add-friend/add-friend';
-import { Friends } from './friends/friends';
 import { Login } from './login/login';
 import { Play } from './play/play';
-import { Scores } from './scores/scores';
 import { Settings } from './settings/settings';
+import { Suggest } from './suggest/suggest';
+import { Scores } from './scores/scores';
+import { AddFriend } from './add-friend/add-friend';
+import { Friends } from './friends/friends';
 
 export default function App() {
 
@@ -56,21 +57,26 @@ export default function App() {
                     Play
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="suggest">
+                    Suggest
+                  </NavLink>
+                </li>
                 {/* <li className="nav-item">
                   <NavLink className="nav-link" to="scores">
                     Scores
                   </NavLink>
                 </li> */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink className="nav-link" to="friends">
                     Friends
                   </NavLink>
-                </li>
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                   <NavLink className="nav-link" to="about">
                     About
                   </NavLink>
-                </li>
+                </li> */}
               </menu>
               <div className="user">
                 {userName &&
@@ -83,18 +89,19 @@ export default function App() {
 
         <Routes>
           <Route path='/about' element={<About />} />
-          <Route path='/add-friend' element={<AddFriend />} />
-          <Route path='/friends' element={<Friends />} />
           <Route path='/' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
+          <Route path='/suggest' element={<Suggest />} />
           <Route path='/play' element={
             <Play 
-              isMobileDevice = {isMobileDevice} 
-              currentPlayerLetter = {currentPlayerLetter}
-              setCurrentPlayerLetter = {setCurrentPlayerLetter}
+            isMobileDevice = {isMobileDevice} 
+            currentPlayerLetter = {currentPlayerLetter}
+            setCurrentPlayerLetter = {setCurrentPlayerLetter}
             />} />
-          {/* <Route path='/scores' element={<Scores />} /> */}
           <Route path='/settings' element={<Settings userName={userName} password={password} />} />
           <Route path='*' element={<NotFound />} />
+          {/* <Route path='/scores' element={<Scores />} /> */}
+          {/* <Route path='/add-friend' element={<AddFriend />} /> */}
+          {/* <Route path='/friends' element={<Friends />} /> */}
         </Routes>
 
         <footer>
