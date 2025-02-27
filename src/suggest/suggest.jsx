@@ -44,7 +44,7 @@ export function Suggest({setUserName, setPassword}) {
     const suggestion = usersMsg.trim().toLowerCase()
 
     // filter profanities
-    if (suggestion === "shrek is overrated"){
+    if (suggestion === "profanity"){
       alert("🐧 you have been permanently blocked 🐧")
       localStorage.removeItem('userName');
       localStorage.removeItem('password');
@@ -69,7 +69,7 @@ export function Suggest({setUserName, setPassword}) {
         <span>Suggestion:</span>
         <input 
         type="text" 
-        placeholder="try 'shrek is overrated'" 
+        placeholder="try: 'profanity'" 
         onChange={suggestionTextChange} 
         value={usersMsg}
         onKeyDown={handleEnterPressed}

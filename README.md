@@ -168,8 +168,8 @@ service:  profanity filter
 
 
 ### Requirements
-- [ ] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
-- [ ] **Hooks** - I did not complete this part of the deliverable.
+- [x] **All functionality implemented or mocked out** - complete - see above
+- [x] **Hooks** - complete - see above
 
 ## 🚀 Service deliverable
 
