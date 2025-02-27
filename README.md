@@ -107,7 +107,9 @@ fully transitioned over to react and vite. organized just like simon. also made 
 
 added reactivity to all components of the app including: 
 - [x] ability to login
+    -[x] ability to see account information in settings page
 - [x] placeholder for profanity filter
+    - [x] placeholder reactivity to 'permanently block' users who use profanity
 - [x] ability to play the game
 - [x] placeholder for suggestion "chatroom"
 

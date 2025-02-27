@@ -88,9 +88,7 @@ export default function App() {
           </header>
 
         <Routes>
-          <Route path='/about' element={<About />} />
-          <Route path='/' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
-          <Route path='/suggest' element={<Suggest />} />
+          <Route path='/suggest' element={<Suggest setUserName = {setUserName} setPassword={setPassword}/>} />
           <Route path='/play' element={
             <Play 
             isMobileDevice = {isMobileDevice} 
@@ -99,6 +97,10 @@ export default function App() {
             />} />
           <Route path='/settings' element={<Settings userName={userName} password={password} />} />
           <Route path='*' element={<NotFound />} />
+          {/* the following two routes take you to the same place */}
+          <Route path='/' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
+          <Route path='/login' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
+            {/* <Route path='/about' element={<About />} /> */}
           {/* <Route path='/scores' element={<Scores />} /> */}
           {/* <Route path='/add-friend' element={<AddFriend />} /> */}
           {/* <Route path='/friends' element={<Friends />} /> */}

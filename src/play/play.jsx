@@ -192,7 +192,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
             <button 
               className='key submit-key' 
               onTouchStart={() => handleUserSubmit()}
-            > &lt; </button>
+            > ✔︎ </button>
           </div>
         </div>
       )}

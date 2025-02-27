@@ -1,10 +1,13 @@
 import React, {useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './suggest.css'
 
-export function Suggest() {
+export function Suggest({setUserName, setPassword}) {
 
-  const maxNumMsgs = 10
-  const topics = ["Dog Breeds", "Famous Actors", "TV Shows", "Restaurants", "Marvel Characters"]
+  const maxNumMsgs = 10;
+  const topics = ["Dog Breeds", "Famous Actors", "TV Shows", "Restaurants", "Marvel Characters"];
+  const navigate = useNavigate();
+
   const [messages, setMessages] = React.useState([]);
   const [usersMsg, setUsersMsg] = React.useState("");
 
@@ -43,7 +46,11 @@ export function Suggest() {
     // filter profanities
     if (suggestion === "shrek is overrated"){
       alert("🐧 you have been permanently blocked 🐧")
-      return
+      localStorage.removeItem('userName');
+      localStorage.removeItem('password');
+      setUserName('');
+      setPassword('');
+      navigate('/login');
     }
 
     setMessages((prev) => {
