@@ -107,21 +107,59 @@ fully transitioned over to react and vite. organized just like simon. also made 
 
 added reactivity to all components of the app including: 
 - [x] ability to login
-- [ ] ability to add (fake) friends (stored in local storage)
-- [ ] ability to play solo mode 
-- [ ] ability to play against a friend
+- [ ] placeholder for q,x,z words
+- [x] ability to play the game
+- [ ] placeholder for websocket "bob joined the game" messages
+
+
+### Major Changes:
+I think I got a little carried away at the beginning of the semester
+and didn't realize how complicated it would be to implement all the
+stuff I wanted to implement. So I've made a few major changes but have
+also included explanation of how I'll still meet the project requirements
+
 
 > [!NOTE]
-> I ditched the scores page. it's just one extra thing to implement
+> DROPPED FEATURE - I ditched the scores page. it's just one extra thing to implement
 > and I'll already be using websockets and the database to keep track of
 > friends
 
 > [!NOTE]
-> originally I was going to have a timer in the main gameplay and your score would
-> be based on your time but since you already have the ability to play against
-> friends in real time it doesn't really make sense to also keep scores plus the
-> timer makes the play page look clunky and it's more unnecesary work when having
-> the friends page will meet the deliverable anyways 
+> DROPPED FEATURE - I also ditched the friends page, add friends page, and all the friends stuff. 
+> Again it's just another thing to implement that I don't have time for and I 
+> can meet the project requirements
+> in a different way
+
+> [!NOTE]
+> FEATURE UPDATE - you can play as many topics as you want each day (as per request by my wife) 
+> every time you finish a game you'll be prompted to start a new game and a random topic will be 
+> generated.
+
+> [!NOTE]
+> TECHNOLOGY CHANGE - I found out that you have to pay to use ChatGPT API and I don't want to deal with that so instead 
+> of asking chat if a given word is in a given topic every single time the user submits a word I'm just going to use static 
+> list of words by topic like the JSON file I have in `data/topicList.json` this will be more efficient, easier to implement,
+> cheaper, and since I'm not doing friends in the database anymore I'll still be fulfilling the database requirement by storing
+> all of the topicLists in the database. apparently mongoDB is very JSON friendly so it should be an easy transition.
+
+> [!NOTE]
+> TECHNOLOGY CHANGE - instead of using chatGPT as my 3rd party service I'm going to use dictionary API to generate random words that
+> start with x and q since those ones are always tricky. it's easier than using chatGPT API but still relevant to the app
+
+> [!NOTE]
+> TECHNOLOGY CHANGE - since I'm not doing the friends functionality anymore I obviously can't use web socket to have two players 
+> face off against eachother in real time... so instead I'm just going to have the "bob joined the game" thing that the simon example
+> has. I know it's a copout but my app is already complicated as is.
+
+#### old technology representation (doing away with)
+database: friends
+websocket: play with friend
+service: chatGPT
+
+#### new technology representation (going forward with)
+database: word lists for each topic
+websocket: bob joined the game
+service:  dictionary q,x,z word generator
 
 
 ### Requirements
