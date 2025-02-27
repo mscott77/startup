@@ -136,7 +136,6 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
             onChange={entryTextChange}
             onKeyDown={handleEnterPressed}
           />
-          <button onClick={handleUserSubmit} ><strong>Submit</strong></button>
         </div>
       </div>
 
@@ -186,6 +185,10 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
               className='key clear-key' 
               onTouchStart={() => removeCharacter()}
             > del </button>
+            <button 
+              className='key submit-key' 
+              onTouchStart={() => handleUserSubmit()}
+            > &lt; </button>
           </div>
         </div>
       )}
