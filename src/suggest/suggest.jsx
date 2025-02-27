@@ -3,30 +3,40 @@ import './suggest.css'
 
 export function Suggest() {
 
-  const maxNumMsgs = 5
+  const maxNumMsgs = 10
   const topics = ["Dog Breeds", "Famous Actors", "TV Shows", "Resturaunts", "Marvel Characters"]
-  const [messages, setMessages] = React.useState([])
+  const [messages, setMessages] = React.useState([]);
+  const [usersMsg, setUsersMsg] = React.useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
       const suggestion = topics[Math.floor(Math.random() * topics.length)]
       setMessages((prev) => {
-        let newMessages = [...prev, suggestion]
+        let newMessages = [suggestion,...prev]
         if (newMessages.length > maxNumMsgs){
-          newMessages.slice(1,maxNumMsgs)
+          newMessages = newMessages.slice(0,maxNumMsgs)
         }
         return newMessages
       });
       console.log(suggestion)
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
+
+  function suggestionTextChange(e) {
+    const value = e.target.value;
+    const filteredValue = value.replace(/[^a-zA-Z0-9]/g, '');
+    setUsersMsg(filteredValue);
+  }
   
   return (
-    <main className="about-page">
-      <h3>Suggest a Topic or a word you think should be added to a topic</h3>
-      <div className='messageBox' >
+    <main className="suggest-page">
+      <div className="custom-form">
+        <span>Suggestion:</span>
+        <input type="text" placeholder="suggest a topic here" onChange={suggestionTextChange} value={usersMsg}/>
+      </div>
+      <div className='messages' >
         {messages.map((message, index) => (
           <div
             key={index}
