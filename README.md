@@ -107,9 +107,9 @@ fully transitioned over to react and vite. organized just like simon. also made 
 
 added reactivity to all components of the app including: 
 - [x] ability to login
-- [ ] placeholder for q,x,z words
+- [x] placeholder for profanity filter
 - [x] ability to play the game
-- [ ] placeholder for websocket "bob joined the game" messages
+- [x] placeholder for suggestion "chatroom"
 
 
 ### Major Changes:
@@ -142,15 +142,17 @@ also included explanation of how I'll still meet the project requirements
 > cheaper, and since I'm not doing friends in the database anymore I'll still be fulfilling the database requirement by storing
 > all of the topicLists in the database. apparently mongoDB is very JSON friendly so it should be an easy transition.
 
-> [!NOTE]
-> TECHNOLOGY CHANGE - instead of using chatGPT as my 3rd party service I'm going to use dictionary API to generate random words that
-> start with x and q since those ones are always tricky. it's easier than using chatGPT API but still relevant to the app
 
 > [!NOTE]
 > TECHNOLOGY CHANGE - since I'm not doing the friends functionality anymore I obviously can't use web socket to have two players 
 > face off against eachother in real time... so instead I'm just going to have a "suggestions" page where there's basically a live chat 
 > where anyone can make a suggestions for a topic. this will serve two purposes 1. allow players to "vote" on topics they want to see
 > in the future and 2. allow me to see what topics people want without having to setup a fancy admin login or something.
+
+> [!NOTE]
+> TECHNOLOGY CHANGE - instead of using chatGPT as my 3rd party service I'm going to use a profanity filter to make sure no
+> one gets too frisky in the suggestions chat - it might be fun to even permanently block users from the game like in 
+> club penguin haha
 
 #### old technology representation (doing away with)
 database: friends
@@ -160,7 +162,7 @@ service: chatGPT
 #### new technology representation (going forward with)
 database: word lists for each topic
 websocket: topic suggestions
-service:  dictionary q,x,z word generator
+service:  profanity filter
 
 
 ### Requirements
