@@ -154,11 +154,17 @@
     margin: 6px 0;
 }
 .play-page #player-progress {
-    border: solid black thin;
+    /* border: solid black thin; */
     border-radius: 20px;
 }
 
 
+
+/* ---------keyboard placeholder (to create proper spacing in desktop mode)------ */
+
+.play-page .desktop-placeholder {
+    height: 500px;
+}
 
 /*------------------------------------KEYBOARD-----------------*/
 

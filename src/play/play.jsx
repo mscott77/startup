@@ -62,7 +62,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
 
   return (
     <main className="play-page">
-      <div className="progress" id="opponent-progress">
+      {/* <div className="progress" id="opponent-progress">
         <p>hippoCarcass123</p>
         <div className="top-row">
           <div className="cell">A</div>
@@ -93,7 +93,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
           <div className="cell">Y</div>
           <div className="cell">Z</div>
         </div>
-      </div>
+      </div> */}
 
       <div className="progress" id="player-progress">
         <div className="top-row">
@@ -138,6 +138,10 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
           />
         </div>
       </div>
+
+      {!isMobileDevice && (
+        <div className='desktop-placeholder'></div>
+      )}
 
       {isMobileDevice && (
         <div className="keyboard">
