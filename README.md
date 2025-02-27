@@ -105,8 +105,26 @@ fully transitioned over to react and vite. organized just like simon. also made 
 
 ## 🚀 React part 2: Reactivity
 
-For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+added reactivity to all components of the app including: 
+- [x] ability to login
+- [ ] ability to add (fake) friends (stored in local storage)
+- [ ] ability to play solo mode 
+- [ ] ability to play against a friend
 
+> [!NOTE]
+> I ditched the scores page. it's just one extra thing to implement
+> and I'll already be using websockets and the database to keep track of
+> friends
+
+> [!NOTE]
+> originally I was going to have a timer in the main gameplay and your score would
+> be based on your time but since you already have the ability to play against
+> friends in real time it doesn't really make sense to also keep scores plus the
+> timer makes the play page look clunky and it's more unnecesary work when having
+> the friends page will meet the deliverable anyways 
+
+
+### Requirements
 - [ ] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
 - [ ] **Hooks** - I did not complete this part of the deliverable.
 

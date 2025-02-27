@@ -56,11 +56,11 @@ export default function App() {
                     Play
                   </NavLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink className="nav-link" to="scores">
                     Scores
                   </NavLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <NavLink className="nav-link" to="friends">
                     Friends
@@ -92,7 +92,7 @@ export default function App() {
               currentPlayerLetter = {currentPlayerLetter}
               setCurrentPlayerLetter = {setCurrentPlayerLetter}
             />} />
-          <Route path='/scores' element={<Scores />} />
+          {/* <Route path='/scores' element={<Scores />} /> */}
           <Route path='/settings' element={<Settings userName={userName} password={password} />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
