@@ -54,16 +54,22 @@ export default function App() {
                   Login
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="play">
-                  Play
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="suggest">
-                  Suggest
-                </NavLink>
-              </li>
+              { 
+                authState === "authenticated" &&
+                <li className="nav-item">
+                    <NavLink className="nav-link" to="play">
+                      Play
+                    </NavLink>
+                </li>
+              }
+              { 
+                authState === "authenticated" &&
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="suggest">
+                    Suggest
+                  </NavLink>
+                </li>
+              }
               {/* <li className="nav-item">
                 <NavLink className="nav-link" to="scores">
                   Scores
