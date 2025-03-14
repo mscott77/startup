@@ -96,7 +96,13 @@ export default function App() {
         </header>
 
         <Routes>
-          <Route path='/suggest' element={<Suggest setUserName = {setUserName}/>} />
+          <Route path='/suggest' element={
+            <Suggest 
+              userName = {userName} 
+              setUserName = {setUserName} 
+              authState = {authState}
+              setAuthState = {setAuthState}
+            />} />
           <Route path='/play' element={
             <Play 
             isMobileDevice = {isMobileDevice} 

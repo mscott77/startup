@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './suggest.css'
 
-export function Suggest({setUserName}) {
+export function Suggest(props) {
 
   const maxNumMsgs = 10;
   const topics = ["Dog Breeds", "Famous Actors", "TV Shows", "Restaurants", "Marvel Characters"];
@@ -40,16 +40,13 @@ export function Suggest({setUserName}) {
     }
   }
 
-  function handleUserSubmit(){
+  async function handleUserSubmit(){
     const suggestion = usersMsg.trim().toLowerCase()
 
     // filter profanities
     if (suggestion === "profanity"){
       alert("🐧 you have been permanently blocked 🐧")
-      localStorage.removeItem('userName');
-      localStorage.removeItem('password');
-      setUserName('');
-      setPassword('');
+      await removeUser();
       navigate('/login');
     }
 
@@ -61,6 +58,24 @@ export function Suggest({setUserName}) {
       return newMessages
     })
     setUsersMsg("")
+  }
+
+  async function removeUser(){
+    fetch(`/api/auth/removeUser`, {
+      method: 'delete',
+      body: JSON.stringify({email: props.userName}),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .catch(() => {
+        // Logout failed. Assuming offline
+      })
+      .finally(() => {
+        localStorage.removeItem('userName');
+        props.setUserName('')
+        props.setAuthState('unauthenticated');
+      });
   }
   
   return (
