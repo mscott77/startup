@@ -177,10 +177,8 @@ I was a little confused because the next deliverable is supposedly the 'login' d
 
 to test the profanity filter just enter some swear words or something into the suggestions page chat room. don't have too much fun :D
 
-
-
 - [x] **Node.js/Express HTTP service** - check. everything runs on express!
-- [x] **Static middleware for frontend** - static middleware used for cookies, error handling, etc.
+- [x] **Static middleware for frontend** - frontend served up in public directory through static middleware
 - [x] **Calls to third party endpoints** - uses a [profanity filter](https://www.profanity.dev/#api) API 
 - [x] **Backend service endpoints** - added endpoints to handle login/logout/delete account operations
 - [x] **Frontend calls service endpoints** - frontend calls endpoints for login/logout and chat room
