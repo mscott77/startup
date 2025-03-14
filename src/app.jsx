@@ -11,7 +11,6 @@ import { Suggest } from './suggest/suggest';
 import { Scores } from './scores/scores';
 import { AddFriend } from './add-friend/add-friend';
 import { Friends } from './friends/friends';
-import {AuthState} from './login/authState';
 
 export default function App() {
 
