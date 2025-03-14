@@ -76,7 +76,7 @@ export function Unauthenticated(props) {
           <input type="text" placeholder="password" onChange={passwordTextChange} value={passwordText} />
         </div>
         <button type="submit" onClick={loginUser}>Login</button>
-        <button type="submit">Create</button>
+        <button type="submit" onClick={createUser}>Create</button>
       </div>
     </main>
   );
