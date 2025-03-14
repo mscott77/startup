@@ -10,19 +10,19 @@ export function Settings({userName}) {
       <div>
         <h1>User Info</h1>
         <li><strong>Username:</strong> {userName} </li>
-        <li>
+        {/* <li>
           <button 
             onMouseDown={()=>setIsVisible(true)}
             onMouseUp={()=>setIsVisible(false)}
             onMouseLeave={()=>setIsVisible(false)}
-            onTouchStart={() => setIsVisible(true)}  /* for mobile */
-            onTouchEnd={() => setIsVisible(false)}   /* for mobile */
+            onTouchStart={() => setIsVisible(true)} 
+            onTouchEnd={() => setIsVisible(false)}  
           >
             show
           </button>
           <strong>Password: </strong> 
           <span className='password-text'> {isVisible ? "FIXME" : '********' } </span>
-        </li>
+        </li> */}
       </div>
     </main>
   );
