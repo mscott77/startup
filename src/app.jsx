@@ -64,13 +64,6 @@ export default function App() {
                   Suggest
                 </NavLink>
               </li>
-
-              {/* FIXME: DELETE THIS LATER */}
-              <li className="nav-item">
-                <NavLink id="authStatus" className="nav-link">
-                  <i>{authState}</i>
-                </NavLink>
-              </li>
               {/* <li className="nav-item">
                 <NavLink className="nav-link" to="scores">
                   Scores

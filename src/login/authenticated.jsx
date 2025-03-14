@@ -25,7 +25,7 @@ export function Authenticated(props) {
     <main className="login-page">
       <h1>Welcome, {props.userName}</h1>
       <div className='login-form'>
-        <button type="submit">Play</button>
+        <button type="submit" onClick={()=>navigate('/play')}>Play</button>
         <button type="submit" onClick={logout}>Logout</button>
       </div>
     </main>
