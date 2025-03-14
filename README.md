@@ -173,13 +173,17 @@ service:  profanity filter
 
 ## 🚀 Service deliverable
 
-For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+I was a little confused because the next deliverable is supposedly the 'login' deliverable, but the code provided for simon-service already had login stuff basically implemented minus actually querying a database. so I just went ahead and did all my login stuff based on the simon example with a few modifications. It was important for me to implement authentication anyways since the main point of my third party service is to filter profanity and then 'permanently ban' the user (by deleting their account) a-la club penguin.  
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
+to test the profanity filter just enter some swear words or something into the suggestions page chat room. don't have too much fun :D
+
+
+
+- [x] **Node.js/Express HTTP service** - check. everything runs on express!
+- [x] **Static middleware for frontend** - static middleware used for cookies, error handling, etc.
+- [x] **Calls to third party endpoints** - uses a [profanity filter](https://www.profanity.dev/#api) API 
+- [x] **Backend service endpoints** - added endpoints to handle login/logout/delete account operations
+- [x] **Frontend calls service endpoints** - frontend calls endpoints for login/logout and chat room
 
 ## 🚀 DB/Login deliverable
 

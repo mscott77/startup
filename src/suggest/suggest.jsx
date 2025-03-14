@@ -4,6 +4,7 @@ import './suggest.css'
 
 export function Suggest(props) {
 
+  const profanityAPIurl = "https://vector.profanity.dev"
   const maxNumMsgs = 10;
   const topics = ["Dog Breeds", "Famous Actors", "TV Shows", "Restaurants", "Marvel Characters"];
   const navigate = useNavigate();
@@ -44,7 +45,13 @@ export function Suggest(props) {
     const suggestion = usersMsg.trim().toLowerCase()
 
     // filter profanities
-    if (suggestion === "profanity"){
+    const res = await fetch('https://vector.profanity.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: suggestion }),
+    })
+    const body = await res.json();
+    if (body.isProfanity){
       alert("🐧 you have been permanently blocked 🐧")
       await removeUser();
       navigate('/login');
