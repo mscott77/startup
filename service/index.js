@@ -63,6 +63,20 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   console.log('successfull logout')
 });
 
+apiRouter.delete('/auth/removeUser', async (req, res) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  username = user.email
+  if (user) {
+    await removeUser(user.email)
+    res.clearCookie(authCookieName);
+    res.status(204).send({msg: `acccount deleted: ${username}`});
+    console.log(`acccount deleted: ${username}`)
+  }
+  else{
+    res.status(404).send({msg: 'User not found'})
+  }
+});
+
 // Middleware to verify that the user is authorized to call an endpoint
 const verifyAuth = async (req, res, next) => {
   const user = await findUser('token', req.cookies[authCookieName]);
@@ -97,6 +111,10 @@ async function createUser(email, password) {
   users.push(user);
 
   return user;
+}
+
+async function removeUser(email){
+  users = users.filter(user => user.email !== email);
 }
 
 async function findUser(field, value) {
