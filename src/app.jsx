@@ -11,11 +11,14 @@ import { Suggest } from './suggest/suggest';
 import { Scores } from './scores/scores';
 import { AddFriend } from './add-friend/add-friend';
 import { Friends } from './friends/friends';
+import {AuthState} from './login/authState';
 
 export default function App() {
 
-  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || null);
-  const [password, setPassword] = React.useState(localStorage.getItem('password') || null);
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+  const currentAuthState = userName ? "authenticated" : "unauthenticated";
+  const [authState, setAuthState] = React.useState(currentAuthState);
+  
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
   const [currentPlayerLetter, setCurrentPlayerLetter] = React.useState('a');
 
@@ -62,6 +65,13 @@ export default function App() {
                     Suggest
                   </NavLink>
                 </li>
+
+                {/* FIXME: DELETE THIS LATER */}
+                <li className="nav-item">
+                  <NavLink id="authStatus" className="nav-link">
+                    <i>{authState}</i>
+                  </NavLink>
+                </li>
                 {/* <li className="nav-item">
                   <NavLink className="nav-link" to="scores">
                     Scores
@@ -88,19 +98,19 @@ export default function App() {
           </header>
 
         <Routes>
-          <Route path='/suggest' element={<Suggest setUserName = {setUserName} setPassword={setPassword}/>} />
+          <Route path='/suggest' element={<Suggest setUserName = {setUserName}/>} />
           <Route path='/play' element={
             <Play 
             isMobileDevice = {isMobileDevice} 
             currentPlayerLetter = {currentPlayerLetter}
             setCurrentPlayerLetter = {setCurrentPlayerLetter}
             />} />
-          <Route path='/settings' element={<Settings userName={userName} password={password} />} />
+          <Route path='/settings' element={<Settings userName={userName}/>} />
           <Route path='*' element={<NotFound />} />
           {/* the following two routes take you to the same place */}
-          <Route path='/' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
-          <Route path='/login' element={<Login setUserName = {setUserName} setPassword={setPassword} />} exact />
-            {/* <Route path='/about' element={<About />} /> */}
+          <Route path='/' element={<Login setUserName = {setUserName} />} exact />
+          <Route path='/login' element={<Login setUserName = {setUserName} />} exact />
+          {/* <Route path='/about' element={<About />} /> */}
           {/* <Route path='/scores' element={<Scores />} /> */}
           {/* <Route path='/add-friend' element={<AddFriend />} /> */}
           {/* <Route path='/friends' element={<Friends />} /> */}

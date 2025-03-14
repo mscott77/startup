@@ -1,7 +1,7 @@
 import React from 'react';
 import './settings.css'
 
-export function Settings({userName, password}) {
+export function Settings({userName}) {
 
   const [isVisible, setIsVisible] = React.useState(false)
 
@@ -21,7 +21,7 @@ export function Settings({userName, password}) {
             show
           </button>
           <strong>Password: </strong> 
-          <span className='password-text'> {isVisible ? password : '********' } </span>
+          <span className='password-text'> {isVisible ? "FIXME" : '********' } </span>
         </li>
       </div>
     </main>

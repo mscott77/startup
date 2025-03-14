@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './suggest.css'
 
-export function Suggest({setUserName, setPassword}) {
+export function Suggest({setUserName}) {
 
   const maxNumMsgs = 10;
   const topics = ["Dog Breeds", "Famous Actors", "TV Shows", "Restaurants", "Marvel Characters"];

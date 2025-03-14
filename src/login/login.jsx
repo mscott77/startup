@@ -3,7 +3,7 @@ import './login.css'
 import '../custom-form.css'
 import { useNavigate } from 'react-router-dom';
 
-export function Login( {setUserName, setPassword}) {
+export function Login( {setUserName}) {
 
   const [userNameText, setUserNameText] = React.useState('');
   const [passwordText, setPasswordText] = React.useState('');
@@ -49,7 +49,7 @@ export function Login( {setUserName, setPassword}) {
           <input type="text" placeholder="password" onChange={passwordTextChange} value={passwordText} />
         </div>
         <button type="submit" onClick={loginUser}>Login</button>
-        {/* <button type="submit">Create</button> */}
+        <button type="submit">Create</button>
       </div>
     </main>
   );
