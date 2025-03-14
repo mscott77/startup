@@ -47,54 +47,54 @@ export default function App() {
     <BrowserRouter>
       <div className="body">
         <header>
-            <nav className="">
-              <menu className="">
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="">
-                    Login
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="play">
-                    Play
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="suggest">
-                    Suggest
-                  </NavLink>
-                </li>
+          <nav className="">
+            <menu className="">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="">
+                  Login
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="play">
+                  Play
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="suggest">
+                  Suggest
+                </NavLink>
+              </li>
 
-                {/* FIXME: DELETE THIS LATER */}
-                <li className="nav-item">
-                  <NavLink id="authStatus" className="nav-link">
-                    <i>{authState}</i>
-                  </NavLink>
-                </li>
-                {/* <li className="nav-item">
-                  <NavLink className="nav-link" to="scores">
-                    Scores
-                  </NavLink>
-                </li> */}
-                {/* <li className="nav-item">
-                  <NavLink className="nav-link" to="friends">
-                    Friends
-                  </NavLink>
-                </li> */}
-                {/* <li className="nav-item">
-                  <NavLink className="nav-link" to="about">
-                    About
-                  </NavLink>
-                </li> */}
-              </menu>
-              <div className="user">
-                {userName &&
-                <NavLink className="nav-link" to="settings">
-                  {userName} <img src="gear.ico" height="15px"/> 
-                </NavLink>}
-              </div>
-            </nav>
-          </header>
+              {/* FIXME: DELETE THIS LATER */}
+              <li className="nav-item">
+                <NavLink id="authStatus" className="nav-link">
+                  <i>{authState}</i>
+                </NavLink>
+              </li>
+              {/* <li className="nav-item">
+                <NavLink className="nav-link" to="scores">
+                  Scores
+                </NavLink>
+              </li> */}
+              {/* <li className="nav-item">
+                <NavLink className="nav-link" to="friends">
+                  Friends
+                </NavLink>
+              </li> */}
+              {/* <li className="nav-item">
+                <NavLink className="nav-link" to="about">
+                  About
+                </NavLink>
+              </li> */}
+            </menu>
+            <div className="user">
+              {userName &&
+              <NavLink className="nav-link" to="settings">
+                {userName} <img src="gear.ico" height="15px"/> 
+              </NavLink>}
+            </div>
+          </nav>
+        </header>
 
         <Routes>
           <Route path='/suggest' element={<Suggest setUserName = {setUserName}/>} />
@@ -107,8 +107,20 @@ export default function App() {
           <Route path='/settings' element={<Settings userName={userName}/>} />
           <Route path='*' element={<NotFound />} />
           {/* the following two routes take you to the same place */}
-          <Route path='/' element={<Login setUserName = {setUserName} />} exact />
-          <Route path='/login' element={<Login setUserName = {setUserName} />} exact />
+          <Route path='/' element={
+            <Login
+              userName = {userName} 
+              setUserName = {setUserName} 
+              authState = {authState}
+              setAuthState = {setAuthState}
+            />} exact />
+          <Route path='/login' element={
+            <Login 
+              userName = {userName} 
+              setUserName = {setUserName} 
+              authState = {authState}
+              setAuthState = {setAuthState}
+            />} exact />
           {/* <Route path='/about' element={<About />} /> */}
           {/* <Route path='/scores' element={<Scores />} /> */}
           {/* <Route path='/add-friend' element={<AddFriend />} /> */}

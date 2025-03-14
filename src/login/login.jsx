@@ -5,14 +5,24 @@ import { useNavigate } from 'react-router-dom';
 import {Unauthenticated} from './unauthenticated'
 import {Authenticated} from './authenticated'
 
-export function Login( {setUserName}) {
-
-  const isAuth = false;
+export function Login( props) {
 
   return (
     <main className="login-page">
-      {isAuth === false && <Unauthenticated setUserName={setUserName}/>}
-      {isAuth === true && <Authenticated/>}
+      {props.authState === "unauthenticated" && 
+      <Unauthenticated 
+        userName = {props.userName} 
+        setUserName = {props.setUserName} 
+        authState = {props.authState}
+        setAuthState = {props.setAuthState}
+      />}
+      {props.authState === "authenticated" && 
+      <Authenticated
+        userName = {props.userName} 
+        setUserName = {props.setUserName} 
+        authState = {props.authState}
+        setAuthState = {props.setAuthState}
+      />}
     </main>
   );
 }
