@@ -7,12 +7,26 @@ export function Authenticated(props) {
 
   const navigate = useNavigate();
 
+  async function logout(){
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    })
+      .catch(() => {
+        // Logout failed. Assuming offline
+      })
+      .finally(() => {
+        localStorage.removeItem('userName');
+        props.setUserName('')
+        props.setAuthState('unauthenticated');
+      });
+  }
+
   return (
     <main className="login-page">
       <h1>Welcome, {props.userName}</h1>
       <div className='login-form'>
         <button type="submit">Play</button>
-        <button type="submit">Logout</button>
+        <button type="submit" onClick={logout}>Logout</button>
       </div>
     </main>
   );

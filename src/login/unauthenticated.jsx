@@ -41,7 +41,7 @@ export function Unauthenticated(props) {
     });
     if (response?.status === 200) {
       localStorage.setItem('userName', userNameText);
-      props.setUserName(userNameText);
+      props.setUserName(userNameText)
       props.setAuthState('authenticated')
 
     } else {
