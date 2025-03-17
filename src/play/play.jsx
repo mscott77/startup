@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './play.css'
 import topicWords from "../data/topicList.json"
 
-export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLetter}) {
+export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLetter, currentPlayerTopic, setCurrentPlayerTopic}) {
 
   const [entryText, setEntryText] = React.useState('');
+
 
   function entryTextChange(e){
     const value = e.target.value;

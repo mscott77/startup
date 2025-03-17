@@ -20,7 +20,49 @@ export default function App() {
   
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
   const [currentPlayerLetter, setCurrentPlayerLetter] = React.useState('a');
+  const [currentPlayerTopic, setCurrentPlayerTopic] = React.useState('Fruits');
+  // note - currentPlayerTopic holds the entire JSON object for the topic list from the DB (not just the topic name)
 
+  //-------------------------------current topic logic--------------------------------------
+  async function getUsersCurrentTopicTitle() {
+    // return topic title if exists for that user
+    // return null if doesn't exist
+    return null
+  }
+
+  async function assignPlayerGameplayData(topicTitle,currentLetter){
+
+  }
+
+  async function importRandomTopic(){
+    const topic = {"title":"fruits"} // FIXME: this isn't a real topic
+    return topic
+  }
+
+  async function importSpecifiedTopic(){
+    const topic = {"title":"fruits"} // FIXME: this isn't a real topic
+    return topic
+  }
+
+  useEffect(()=> {
+    // does the user already have a current topic set?
+    topicTitle = getUsersCurrentTopicTitle();
+
+    // yes - import that topic
+    if (topicTitle){
+      topic = importSpecifiedTopic(topicTitle);
+      // FIXME: set the useState stuff
+    }
+    // no - import a random topic and assign user attribute current topic
+    else{
+      topic = importRandomTopic();
+      // FIXME: set the useState stuff
+      assignPlayerGameplayData(topicTitle,'a')
+    }
+  }, []);
+
+
+  //-------------------------------mobile vs desktop logic--------------------------------------
   function isMobile() {
     const isMobileDev = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
     const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
@@ -43,6 +85,8 @@ export default function App() {
     };
   }, []);
 
+
+  //--------------------------------------------HTML content------------------------------------------------------
   return (
     <BrowserRouter>
       <div className="body">
@@ -108,6 +152,8 @@ export default function App() {
             isMobileDevice = {isMobileDevice} 
             currentPlayerLetter = {currentPlayerLetter}
             setCurrentPlayerLetter = {setCurrentPlayerLetter}
+            currentPlayerTopic = {currentPlayerTopic}
+            setCurrentPlayerTopic = {setCurrentPlayerTopic}
             />} />
           <Route path='/settings' element={<Settings userName={userName}/>} />
           <Route path='*' element={<NotFound />} />

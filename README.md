@@ -189,19 +189,30 @@ This deliverable was super easy because I already had all of the login stuff set
 All I had to do is add the database access to the login service.
 I also added persistent storage for different topic lists
 
-- [ ] **User registration** - I did not complete this part of the deliverable.
-- [ ] **User login and logout** - I did not complete this part of the deliverable.
+- [x] **User registration** - I did not complete this part of the deliverable.
+- [x] **User login and logout** - I did not complete this part of the deliverable.
 - [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
+- [x] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
 - [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.  
 
 ##### My TODO list
+(login stuff)
 - [x] login nonexistent user -> unauthorized
 - [x] create nonexistent user -> populates DB
 - [x] logout existing user -> remove token from DB
 - [x] login existing user -> update token in DB for that user
 - [x] login attempt existing user w/ wrong password -> unauthorized
 - [x] remove existing user -> remove DB entry for that user (username, password, token, everything)
+(gameplay stuff)
+- [ ] on loading play component -> check users 'currentTopic' attribute (in DB) 
+    - if empty assign a current topic from 'topics' collection (randomly)
+- [ ] give users a 'topicProgress' attribute (in DB) which you update every time they guess a word correctly  
+    - this way, game progress will persist across sessions
+    - if topic progress is nonexistent, assign it to a
+- [ ] add a 'new topic' button to the play page that allows you to randomly get a new topic
+    - so TA can test without having to actually type in all the words, and it's also a cool feature in case you get bored of the current topic
+(other)
+- [ ] restrict access to endpoints based on authentication (backend enforcement rather than just hiding UI elements on frontend)
 
 ## 🚀 WebSocket deliverable
 
