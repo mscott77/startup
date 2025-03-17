@@ -185,13 +185,23 @@ to test the profanity filter just enter some swear words or something into the s
 
 ## 🚀 DB/Login deliverable
 
-For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+This deliverable was super easy because I already had all of the login stuff setup from the last deliverable. Not sure if this was the intended way to do things but an any rate it's all finished now.  
+All I had to do is add the database access to the login service.
+I also added persistent storage for different topic lists
 
 - [ ] **User registration** - I did not complete this part of the deliverable.
 - [ ] **User login and logout** - I did not complete this part of the deliverable.
 - [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
 - [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.
+- [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.  
+
+##### My TODO list
+- [x] login nonexistent user -> unauthorized
+- [x] create nonexistent user -> populates DB
+- [x] logout existing user -> remove token from DB
+- [x] login existing user -> update token in DB for that user
+- [x] login attempt existing user w/ wrong password -> unauthorized
+- [x] remove existing user -> remove DB entry for that user (username, password, token, everything)
 
 ## 🚀 WebSocket deliverable
 
