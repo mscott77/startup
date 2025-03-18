@@ -18,6 +18,7 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+//----------------------------------------user info endpoints------------------------------------
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await DB.getUser(req.body.email)) {
@@ -70,6 +71,40 @@ apiRouter.delete('/auth/removeUser', async (req, res) => {
   else{
     res.status(404).send({msg: 'User not found'})
   }
+});
+
+//----------------------------------------gameplay endpoints------------------------------------
+
+// get users game state
+apiRouter.get('/game/player/state', async (req, res) => {
+  // recieve: token cookie
+  // return: {"currentTopic":"fruits", "currentLetter":"b"}
+  const user = await DB.getUserByToken(req.cookies[authCookieName]);
+  if (user) {
+    console.log(` currentTopic: ${user.currentTopic}\n currentLetter:${user.currentLetter}`);
+    res.send({currentTopic: user.currentTopic, currentLetter: user.currentLetter});
+  }
+  else{
+    res.status(404).send({msg: 'User not found'})
+  }
+});
+
+// set users game state
+apiRouter.post('/game/player/state', async (req, res) => {
+  // recieve token cookie, body{currentTopic, currentLetter}
+  // set: {"currentTopic":"fruits", "currentLetter":"b"}
+});
+
+// get random topic list
+apiRouter.get('/game/topics/getRandom', async (req, res) => {
+  // recieve: nothing
+  // return: random topic list: {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"], ...}
+});
+
+// get specified topic list
+apiRouter.get('/game/topics/getSpecified', async (req, res) => {
+  // recieve: {"topicListTitle": "star wars"}
+  // return: requested topicList: {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"], ...}
 });
 
 // Middleware to verify that the user is authorized to call an endpoint
