@@ -19,7 +19,12 @@ const scoreCollection = db.collection('topic');
 })();
 
 //------------------------gameplay-------------------------------------
-
+async function setUserGameplayInfo(token, currentTopic, currentLetter){
+  await userCollection.updateOne(
+    { token: token }, // Find the user by token
+    { $set: { currentTopic, currentLetter } } // Update only the 'token' field
+);
+}
 
 
 //------------------------user info-------------------------------------
@@ -52,4 +57,5 @@ module.exports = {
   addUser,
   updateUserToken,
   removeUser,
+  setUserGameplayInfo,
 };

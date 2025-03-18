@@ -91,8 +91,23 @@ apiRouter.get('/game/player/state', async (req, res) => {
 
 // set users game state
 apiRouter.post('/game/player/state', async (req, res) => {
-  // recieve token cookie, body{currentTopic, currentLetter}
+  // recieve token cookie, body{"currentTopic":"fruits", "currentLetter":"b"}
   // set: {"currentTopic":"fruits", "currentLetter":"b"}
+  const user = await DB.getUserByToken(req.cookies[authCookieName]);
+  if (user) {
+    DB.setUserGameplayInfo(user.token, req.body.currentTopic, req.body.currentLetter)
+      .then(() => {
+        console.log(`user: '${user.email}' gameplay info updates successfully`)
+        res.status(200).send({ msg: 'User gameplay info updated successfully' }); // Success response
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).send({ msg: 'Error updating user gameplay info' }); // Error response
+      })
+  }
+  else{
+    res.status(404).send({msg: 'User not found'})
+  }
 });
 
 // get random topic list
