@@ -114,6 +114,9 @@ apiRouter.post('/game/player/state', async (req, res) => {
 apiRouter.get('/game/topics/getRandom', async (req, res) => {
   // recieve: nothing
   // return: random topic list: {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"], ...}
+  const topic = await DB.getRandomTopic();
+  console.log(`user requested random topic - topic provided: ${topic["title"]}`);
+  res.send(topic);
 });
 
 // get specified topic list

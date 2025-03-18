@@ -26,9 +26,18 @@ async function setUserGameplayInfo(token, currentTopic, currentLetter){
 );
 }
 
-function getTopicByTitle(title) {
+async function getTopicByTitle(title) {
   return topicCollection.findOne({ title: title });
 }
+
+async function getRandomTopic(){
+  const topics = await topicCollection.aggregate([
+    { $sample: { size: 1 } }  // size specifies the number of documents to return
+  ]).toArray();
+
+  return topics[0]
+}
+
 
 //------------------------user info-------------------------------------
 function getUser(email) {
@@ -62,4 +71,5 @@ module.exports = {
   removeUser,
   setUserGameplayInfo,
   getTopicByTitle,
+  getRandomTopic,
 };
