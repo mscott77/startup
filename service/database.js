@@ -5,7 +5,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
-const scoreCollection = db.collection('topic');
+const topicCollection = db.collection('topics');
 
 //------------------ping database (connection check)--------------------
 (async function testConnection() {
@@ -26,6 +26,9 @@ async function setUserGameplayInfo(token, currentTopic, currentLetter){
 );
 }
 
+function getTopicByTitle(title) {
+  return topicCollection.findOne({ title: title });
+}
 
 //------------------------user info-------------------------------------
 function getUser(email) {
@@ -58,4 +61,5 @@ module.exports = {
   updateUserToken,
   removeUser,
   setUserGameplayInfo,
+  getTopicByTitle,
 };
