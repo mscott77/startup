@@ -34,7 +34,8 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     }
 
     const firstLetter = word[0];
-    const acceptedWords = currentPlayerTopic[firstLetter] || []; // Get words for that letter
+    let acceptedWords = currentPlayerTopic[firstLetter] || []; // Get words for that letter
+    acceptedWords = acceptedWords.map((w) => w.toLowerCase());
 
     if (firstLetter != currentPlayerLetter) {
       setEntryText("")
@@ -127,7 +128,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
       </div>
 
       <div id="word-entry">
-        <h1>Fruits</h1>
+        <h1>{currentPlayerTopic.title}</h1>
         <div className='form'>
           <input 
             type="text" 

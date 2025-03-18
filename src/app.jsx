@@ -28,7 +28,7 @@ export default function App() {
     // return topic title if exists for that user
     // return null if doesn't exist
     // FIXME: actually make a backend for this!
-    return {"currentTopic":"Fruits", "currentLetter":"a"}
+    return null //{"currentTopic":"fruits", "currentLetter":"b"}
   }
 
   async function assignPlayerGameplayData(topicTitle,currentLetter){
@@ -36,12 +36,12 @@ export default function App() {
   }
 
   async function importRandomTopic(){
-    const topic = {"title":"Fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"]} // FIXME: this isn't a real topic
+    const topic = {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"],"b":["Boba Fett","Bespin","Bantha"],"c":["C-3PO","Coruscant","Chiss"],"d":["Darth Vader","Dagobah","Dathomir"],"e":["Emperor Palpatine","Endor","Ewok"]} // FIXME: this isn't a real topic
     return topic
   }
 
   async function importSpecifiedTopic(){
-    const topic = {"title":"Fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"]} // FIXME: this isn't a real topic
+    const topic = {"title":"fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"],"c":["cherry","cranberry","cantaloupe"],"d":["date","dragon fruit","durian"],"e":["elderberry","eggfruit"]} // FIXME: this isn't a real topic
     return topic
   }
 
@@ -52,6 +52,7 @@ export default function App() {
       if (userGameState?.currentTopic) {
         const topic = await importSpecifiedTopic(userGameState.currentTopic);
         setCurrentPlayerTopic(topic);
+        setCurrentPlayerLetter(userGameState.currentLetter);
       } else {
         const topic = await importRandomTopic();
         setCurrentPlayerTopic(topic);

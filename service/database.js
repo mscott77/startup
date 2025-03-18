@@ -7,7 +7,7 @@ const db = client.db('startup');
 const userCollection = db.collection('user');
 const scoreCollection = db.collection('topic');
 
-// This will asynchronously test the connection and exit the process if it fails
+//------------------ping database (connection check)--------------------
 (async function testConnection() {
   try {
     await db.command({ ping: 1 });
@@ -18,6 +18,11 @@ const scoreCollection = db.collection('topic');
   }
 })();
 
+//------------------------gameplay-------------------------------------
+
+
+
+//------------------------user info-------------------------------------
 function getUser(email) {
     return userCollection.findOne({ email: email });
 }
