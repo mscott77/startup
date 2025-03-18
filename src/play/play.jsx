@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import './play.css'
-import topicWords from "../data/topicList.json"
 
 export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLetter, currentPlayerTopic, setCurrentPlayerTopic}) {
 
@@ -35,7 +34,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     }
 
     const firstLetter = word[0];
-    const acceptedWords = topicWords[firstLetter] || []; // Get words for that letter
+    const acceptedWords = currentPlayerTopic[firstLetter] || []; // Get words for that letter
 
     if (firstLetter != currentPlayerLetter) {
       setEntryText("")

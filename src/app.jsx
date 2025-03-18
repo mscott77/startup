@@ -24,42 +24,43 @@ export default function App() {
   // note - currentPlayerTopic holds the entire JSON object for the topic list from the DB (not just the topic name)
 
   //-------------------------------current topic logic--------------------------------------
-  async function getUsersCurrentTopicTitle() {
+  async function getUsersGameStateInfo() {
     // return topic title if exists for that user
     // return null if doesn't exist
-    return null
+    // FIXME: actually make a backend for this!
+    return {"currentTopic":"Fruits", "currentLetter":"a"}
   }
 
   async function assignPlayerGameplayData(topicTitle,currentLetter){
-
+    return null
   }
 
   async function importRandomTopic(){
-    const topic = {"title":"fruits"} // FIXME: this isn't a real topic
+    const topic = {"title":"Fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"]} // FIXME: this isn't a real topic
     return topic
   }
 
   async function importSpecifiedTopic(){
-    const topic = {"title":"fruits"} // FIXME: this isn't a real topic
+    const topic = {"title":"Fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"]} // FIXME: this isn't a real topic
     return topic
   }
 
-  useEffect(()=> {
-    // does the user already have a current topic set?
-    topicTitle = getUsersCurrentTopicTitle();
-
-    // yes - import that topic
-    if (topicTitle){
-      topic = importSpecifiedTopic(topicTitle);
-      // FIXME: set the useState stuff
+  useEffect(() => {
+    async function fetchGameState() {
+      const userGameState = await getUsersGameStateInfo();
+  
+      if (userGameState?.currentTopic) {
+        const topic = await importSpecifiedTopic(userGameState.currentTopic);
+        setCurrentPlayerTopic(topic);
+      } else {
+        const topic = await importRandomTopic();
+        setCurrentPlayerTopic(topic);
+        assignPlayerGameplayData(topic.title, 'a');
+      }
     }
-    // no - import a random topic and assign user attribute current topic
-    else{
-      topic = importRandomTopic();
-      // FIXME: set the useState stuff
-      assignPlayerGameplayData(topicTitle,'a')
-    }
-  }, []);
+  
+    fetchGameState();
+  }, [])
 
 
   //-------------------------------mobile vs desktop logic--------------------------------------
