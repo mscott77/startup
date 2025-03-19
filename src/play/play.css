@@ -13,6 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .play-page #word-entry .form {
@@ -59,7 +60,7 @@
     }
 }
 
-.play-page #word-entry button {
+.play-page #word-entry button, #new-topic-button {
     margin: 10px;
     height: 40px;
     width: 100px;
@@ -70,8 +71,16 @@
     font-size: large;
 }
 
-.play-page #word-entry button:hover {
+.play-page #word-entry button:hover, #new-topic-button:hover{
     background-color: rgba(0, 0, 0, 0.45);
+}
+
+.play-page #new-topic-button{
+    height: auto;
+    width: auto;
+    padding: 5px 10px;
+    margin: 0px;
+    font-size:small
 }
 
 

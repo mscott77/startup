@@ -66,7 +66,14 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     updateGameStateInfo();
   }, [])
 
-  //-------------------------------------gameplay logic------------------------------------------
+  async function getNewTopic(){
+    const topic = await importRandomTopic();
+    setCurrentPlayerTopic(topic);
+    setCurrentPlayerLetter('a');
+    assignPlayerGameplayData(topic.title, 'a');
+  }
+
+  //-------------------------------------game play logic------------------------------------------
 
   const [entryText, setEntryText] = React.useState('');
 
@@ -192,6 +199,8 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
             ))}
         </div>
       </div>
+
+      <button id="new-topic-button" onClick={getNewTopic}> New Topic </button>
 
       <div id="word-entry">
         <h1>{currentPlayerTopic.title}</h1>
