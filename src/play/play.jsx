@@ -27,8 +27,14 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
   }
 
   async function importRandomTopic(){
-    const topic = {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"],"b":["Boba Fett","Bespin","Bantha"],"c":["C-3PO","Coruscant","Chiss"],"d":["Darth Vader","Dagobah","Dathomir"],"e":["Emperor Palpatine","Endor","Ewok"]} // FIXME: this isn't a real topic
-    return topic
+    const response = await fetch(`api/game/topics/getRandom`, {
+      method: 'get',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const topic = await response.json();
+    return topic;
   }
 
   async function importSpecifiedTopic(){
