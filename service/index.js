@@ -81,7 +81,7 @@ apiRouter.get('/game/player/state', async (req, res) => {
   // return: {"currentTopic":"fruits", "currentLetter":"b"}
   const user = await DB.getUserByToken(req.cookies[authCookieName]);
   if (user) {
-    console.log(` currentTopic: ${user.currentTopic}\n currentLetter:${user.currentLetter}`);
+    console.log(`user '${user.email}' requested game state\n currentTopic: ${user.currentTopic}\n currentLetter:${user.currentLetter}`);
     res.send({currentTopic: user.currentTopic, currentLetter: user.currentLetter});
   }
   else{
@@ -133,6 +133,8 @@ apiRouter.get('/game/topics/getSpecified', async (req, res) => {
   }
 });
 
+
+//-------------------------------------------middleware----------------------------------
 // Middleware to verify that the user is authorized to call an endpoint
 const verifyAuth = async (req, res, next) => {
   const user = await DB.getUserByToken(req.cookies[authCookieName]);

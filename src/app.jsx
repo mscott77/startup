@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './app.css';
 
 // routing
-import { BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Routes, useLocation} from 'react-router-dom';
 import { About } from './about/about';
 import { Login } from './login/login';
 import { Play } from './play/play';
@@ -22,47 +22,6 @@ export default function App() {
   const [currentPlayerLetter, setCurrentPlayerLetter] = React.useState('a');
   const [currentPlayerTopic, setCurrentPlayerTopic] = React.useState('Fruits');
   // note - currentPlayerTopic holds the entire JSON object for the topic list from the DB (not just the topic name)
-
-  //-------------------------------current topic logic--------------------------------------
-  async function getUsersGameStateInfo() {
-    // return topic title if exists for that user
-    // return null if doesn't exist
-    // FIXME: actually make a backend for this!
-    return null //{"currentTopic":"fruits", "currentLetter":"b"}
-  }
-
-  async function assignPlayerGameplayData(topicTitle,currentLetter){
-    return null
-  }
-
-  async function importRandomTopic(){
-    const topic = {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"],"b":["Boba Fett","Bespin","Bantha"],"c":["C-3PO","Coruscant","Chiss"],"d":["Darth Vader","Dagobah","Dathomir"],"e":["Emperor Palpatine","Endor","Ewok"]} // FIXME: this isn't a real topic
-    return topic
-  }
-
-  async function importSpecifiedTopic(){
-    const topic = {"title":"fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"],"c":["cherry","cranberry","cantaloupe"],"d":["date","dragon fruit","durian"],"e":["elderberry","eggfruit"]} // FIXME: this isn't a real topic
-    return topic
-  }
-
-  useEffect(() => {
-    async function fetchGameState() {
-      const userGameState = await getUsersGameStateInfo();
-  
-      if (userGameState?.currentTopic) {
-        const topic = await importSpecifiedTopic(userGameState.currentTopic);
-        setCurrentPlayerTopic(topic);
-        setCurrentPlayerLetter(userGameState.currentLetter);
-      } else {
-        const topic = await importRandomTopic();
-        setCurrentPlayerTopic(topic);
-        assignPlayerGameplayData(topic.title, 'a');
-      }
-    }
-  
-    fetchGameState();
-  }, [])
-
 
   //-------------------------------mobile vs desktop logic--------------------------------------
   function isMobile() {

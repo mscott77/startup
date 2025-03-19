@@ -3,8 +3,54 @@ import './play.css'
 
 export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLetter, currentPlayerTopic, setCurrentPlayerTopic}) {
 
-  const [entryText, setEntryText] = React.useState('');
+  //---------------------------------------------------game state logic------------------------------------------------------------
+  async function getUsersGameStateInfo() {
+    // return user game state object {currentTopic, currentLetter} (might be 'undefined' this will be handled by caller)
+    const response = await fetch(`api/game/player/state`, {
+      method: 'get',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const info = await response.json();
+    return info;
+  }
 
+  async function assignPlayerGameplayData(topicTitle,currentLetter){
+    return null
+  }
+
+  async function importRandomTopic(){
+    const topic = {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"],"b":["Boba Fett","Bespin","Bantha"],"c":["C-3PO","Coruscant","Chiss"],"d":["Darth Vader","Dagobah","Dathomir"],"e":["Emperor Palpatine","Endor","Ewok"]} // FIXME: this isn't a real topic
+    return topic
+  }
+
+  async function importSpecifiedTopic(){
+    const topic = {"title":"fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"],"c":["cherry","cranberry","cantaloupe"],"d":["date","dragon fruit","durian"],"e":["elderberry","eggfruit"]} // FIXME: this isn't a real topic
+    return topic
+  }
+
+  useEffect(() => {
+    async function updateGameStateInfo() {
+      const userGameState = await getUsersGameStateInfo();
+
+      if (userGameState?.currentTopic) {
+        const topic = await importSpecifiedTopic(userGameState.currentTopic);
+        setCurrentPlayerTopic(topic);
+        setCurrentPlayerLetter(userGameState.currentLetter);
+      } else {
+        const topic = await importRandomTopic();
+        setCurrentPlayerTopic(topic);
+        assignPlayerGameplayData(topic.title, 'a');
+      }
+    }
+
+    updateGameStateInfo();
+  }, [])
+
+  //-------------------------------------gameplay logic------------------------------------------
+
+  const [entryText, setEntryText] = React.useState('');
 
   function entryTextChange(e){
     const value = e.target.value;
@@ -61,6 +107,8 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
   // array of cell letters to be used for the player and opponent progress bars
   const cellLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split("");
 
+
+  //------------------------------------------------HTML body-------------------------------------------------------
   return (
     <main className="play-page">
       {/* <div className="progress" id="opponent-progress">
