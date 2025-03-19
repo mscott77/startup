@@ -17,7 +17,13 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
   }
 
   async function assignPlayerGameplayData(topicTitle,currentLetter){
-    return null
+    await fetch(`api/game/player/state`, {
+      method: 'post',
+      body: JSON.stringify({ currentTopic: topicTitle, currentLetter: currentLetter }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
   }
 
   async function importRandomTopic(){
