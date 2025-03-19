@@ -123,9 +123,9 @@ apiRouter.get('/game/topics/getRandom', async (req, res) => {
 apiRouter.get('/game/topics/getSpecified', async (req, res) => {
   // recieve: {"topicListTitle": "star wars"}
   // return: requested topicList: {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"], ...}
-  const topic = await DB.getTopicByTitle(req.body.topicListTitle);
+  const topic = await DB.getTopicByTitle(req.query.topicListTitle);
   if (topic) {
-    console.log(` user requested and successfully fetched the topic: ${req.body.topicListTitle}`);
+    console.log(`user requested and successfully fetched the topic: ${req.query.topicListTitle}`);
     res.send(topic);
   }
   else{

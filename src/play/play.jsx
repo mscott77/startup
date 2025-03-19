@@ -37,9 +37,15 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
     return topic;
   }
 
-  async function importSpecifiedTopic(){
-    const topic = {"title":"fruits","a":["apple","apricot","avocado"],"b":["banana","blueberry","blackberry"],"c":["cherry","cranberry","cantaloupe"],"d":["date","dragon fruit","durian"],"e":["elderberry","eggfruit"]} // FIXME: this isn't a real topic
-    return topic
+  async function importSpecifiedTopic(specifiedTopicTitle){
+    const response = await fetch(`api/game/topics/getSpecified?topicListTitle=${encodeURIComponent(specifiedTopicTitle)}`, {
+      method: 'get',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const topic = await response.json();
+    return topic;
   }
 
   useEffect(() => {
