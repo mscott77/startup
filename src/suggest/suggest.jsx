@@ -70,7 +70,6 @@ export function Suggest(props) {
   async function removeUser(){
     fetch(`/api/auth/removeUser`, {
       method: 'delete',
-      body: JSON.stringify({email: props.userName}),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
