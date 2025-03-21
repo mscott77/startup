@@ -49,6 +49,12 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
   }
 
   useEffect(() => {
+    // send game state info from frontend --> DB
+    assignPlayerGameplayData(currentPlayerTopic.title, currentPlayerLetter);
+  }, [currentPlayerLetter]);
+
+  useEffect(() => {
+    // brings game state info from DB --> frontend
     async function updateGameStateInfo() {
       const userGameState = await getUsersGameStateInfo();
 
@@ -116,7 +122,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
 
     if (acceptedWords.includes(word)) {
       console.log(`${word} is an accepted word! ✅`);
-      setCurrentPlayerLetter((prev)=>incrementLetter(prev));      
+      setCurrentPlayerLetter((prev)=>incrementLetter(prev));
     } 
     else {
       console.log(`${word} is not in the list. ❌`);
