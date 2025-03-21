@@ -185,15 +185,18 @@ to test the profanity filter just enter some swear words or something into the s
 
 ## 🚀 DB/Login deliverable
 
-This deliverable was super easy because I already had all of the login stuff setup from the last deliverable. Not sure if this was the intended way to do things but an any rate it's all finished now.  
+This deliverable was super easy because I already had all of the login stuff setup from the last deliverable.   
+Not sure if this was the intended way to do things but an any rate it's all finished now.  
 All I had to do is add the database access to the login service.
-I also added persistent storage for different topic lists
+I also added persistent storage for different topic lists and game state so you can play the game without losing your progress after logout as well as have access to multiple topics 
 
-- [x] **User registration** - I did not complete this part of the deliverable.
-- [x] **User login and logout** - I did not complete this part of the deliverable.
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [x] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.  
+- [x] **User registration** - user login and authentication using bcrypt and mongoDB
+- [x] **User login and logout** - user login and authentication using bcrypt and mongoDB
+- [x] **Stores data in MongoDB** 
+    - game state stored in MongoDB allowing for game state to be saved after page refresh, logout, etc.
+    - topic lists stored in MongoDB allowing admins to add new topics to the game without having to re-deploy code
+- [x] **Stores credentials in MongoDB** - user login and authentication using bcrypt and mongoDB
+- [x] **Restricts functionality based on authentication** -  
 
 ##### My TODO list
 (login stuff)
@@ -204,15 +207,13 @@ I also added persistent storage for different topic lists
 - [x] login attempt existing user w/ wrong password -> unauthorized
 - [x] remove existing user -> remove DB entry for that user (username, password, token, everything)
 (gameplay stuff)
-- [ ] on loading play component -> check users 'currentTopic' attribute (in DB) 
+- [x] on loading play component -> check users 'currentTopic' attribute (in DB) 
     - if empty assign a current topic from 'topics' collection (randomly)
-- [ ] give users a 'topicProgress' attribute (in DB) which you update every time they guess a word correctly  
+- [x] give users a 'topicProgress' attribute (in DB) which you update every time they guess a word correctly  
     - this way, game progress will persist across sessions
     - if topic progress is nonexistent, assign it to a
-- [ ] add a 'new topic' button to the play page that allows you to randomly get a new topic
+- [x] add a 'new topic' button to the play page that allows you to randomly get a new topic
     - so TA can test without having to actually type in all the words, and it's also a cool feature in case you get bored of the current topic
-(other)
-- [ ] restrict access to endpoints based on authentication (backend enforcement rather than just hiding UI elements on frontend)
 
 ## 🚀 WebSocket deliverable
 

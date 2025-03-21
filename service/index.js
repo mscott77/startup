@@ -18,6 +18,16 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+// Middleware to verify that the user is authorized to call an endpoint
+const verifyAuth = async (req, res, next) => {
+  const user = await DB.getUserByToken(req.cookies[authCookieName]);
+  if (user) {
+    next();
+  } else {
+    res.status(401).send({ msg: 'Unauthorized' });
+  }
+};
+
 //----------------------------------------user info endpoints------------------------------------
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
@@ -49,7 +59,7 @@ apiRouter.post('/auth/login', async (req, res) => {
 });
 
 // DeleteAuth logout a user
-apiRouter.delete('/auth/logout', async (req, res) => {
+apiRouter.delete('/auth/logout',  verifyAuth, async (req, res) => {
   const user = await DB.getUserByToken(req.cookies[authCookieName]);
   if (user) {
     DB.updateUserToken(user.email, '');
@@ -59,7 +69,7 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   console.log('successfull logout')
 });
 
-apiRouter.delete('/auth/removeUser', async (req, res) => {
+apiRouter.delete('/auth/removeUser',  verifyAuth, async (req, res) => {
   const user = await DB.getUserByToken(req.cookies[authCookieName]);
   username = user.email
   if (user) {
@@ -76,7 +86,7 @@ apiRouter.delete('/auth/removeUser', async (req, res) => {
 //----------------------------------------gameplay endpoints------------------------------------
 
 // get users game state
-apiRouter.get('/game/player/state', async (req, res) => {
+apiRouter.get('/game/player/state',  verifyAuth, async (req, res) => {
   // recieve: token cookie
   // return: {"currentTopic":"fruits", "currentLetter":"b"}
   const user = await DB.getUserByToken(req.cookies[authCookieName]);
@@ -90,7 +100,7 @@ apiRouter.get('/game/player/state', async (req, res) => {
 });
 
 // set users game state
-apiRouter.post('/game/player/state', async (req, res) => {
+apiRouter.post('/game/player/state',  verifyAuth, async (req, res) => {
   // recieve token cookie, body{"currentTopic":"fruits", "currentLetter":"b"}
   // set: {"currentTopic":"fruits", "currentLetter":"b"}
   const user = await DB.getUserByToken(req.cookies[authCookieName]);
@@ -111,7 +121,7 @@ apiRouter.post('/game/player/state', async (req, res) => {
 });
 
 // get random topic list
-apiRouter.get('/game/topics/getRandom', async (req, res) => {
+apiRouter.get('/game/topics/getRandom',  verifyAuth, async (req, res) => {
   // recieve: nothing
   // return: random topic list: {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"], ...}
   const topic = await DB.getRandomTopic();
@@ -120,7 +130,7 @@ apiRouter.get('/game/topics/getRandom', async (req, res) => {
 });
 
 // get specified topic list
-apiRouter.get('/game/topics/getSpecified', async (req, res) => {
+apiRouter.get('/game/topics/getSpecified', verifyAuth, async (req, res) => {
   // recieve: {"topicListTitle": "star wars"}
   // return: requested topicList: {"title":"star wars","a":["Anakin Skywalker","Alderaan","ackbar"], ...}
   const topic = await DB.getTopicByTitle(req.query.topicListTitle);
@@ -135,16 +145,6 @@ apiRouter.get('/game/topics/getSpecified', async (req, res) => {
 
 
 //-------------------------------------------middleware----------------------------------
-// Middleware to verify that the user is authorized to call an endpoint
-const verifyAuth = async (req, res, next) => {
-  const user = await DB.getUserByToken(req.cookies[authCookieName]);
-  if (user) {
-    next();
-  } else {
-    res.status(401).send({ msg: 'Unauthorized' });
-  }
-};
-
 
 // Default error handler
 app.use(function (err, req, res, next) {
