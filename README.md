@@ -196,7 +196,7 @@ I also added persistent storage for different topic lists and game state so you 
     - game state stored in MongoDB allowing for game state to be saved after page refresh, logout, etc.
     - topic lists stored in MongoDB allowing admins to add new topics to the game without having to re-deploy code
 - [x] **Stores credentials in MongoDB** - user login and authentication using bcrypt and mongoDB
-- [x] **Restricts functionality based on authentication** -  
+- [x] **Restricts functionality based on authentication** -  only logged in users can access topic list, log themselves out, delete themselves, etc.
 
 ##### My TODO list
 (login stuff)
