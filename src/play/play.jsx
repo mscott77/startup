@@ -65,6 +65,7 @@ export function Play({isMobileDevice, currentPlayerLetter, setCurrentPlayerLette
       } else {
         const topic = await importRandomTopic();
         setCurrentPlayerTopic(topic);
+        setCurrentPlayerLetter('a');
         assignPlayerGameplayData(topic.title, 'a');
       }
     }
