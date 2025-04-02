@@ -11,22 +11,21 @@ export function Suggest(props) {
 
   const [messages, setMessages] = React.useState([]);
   const [usersMsg, setUsersMsg] = React.useState("");
+  const [ws, setWs] = React.useState(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const suggestion = topics[Math.floor(Math.random() * topics.length)]
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    console.log(`connected to websocket on: ${protocol}://${window.location.host}/ws`)
 
-      setMessages((prev) => {
-        let newMessages = [suggestion,...prev]
-        if (newMessages.length > maxNumMsgs){
-          newMessages = newMessages.slice(0,maxNumMsgs)
-        }
-        return newMessages
-      });
-      console.log(suggestion)
-    }, 5000);
+    socket.onmessage = (event) => {
+      const parsedData = JSON.parse(event.data); // Convert back to object
+      setMessages((prevMessages) => [...prevMessages, parsedData.message]);
+    };
 
-    return () => clearInterval(interval);
+    setWs(socket);
+
+    return () => socket.close();
   }, []);
 
   function suggestionTextChange(e) {
@@ -56,6 +55,8 @@ export function Suggest(props) {
       await removeUser();
       navigate('/login');
     }
+
+    ws.send(suggestion);
 
     setMessages((prev) => {
       let newMessages = [suggestion,...prev]
