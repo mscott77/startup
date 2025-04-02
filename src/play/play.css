@@ -223,7 +223,7 @@
     font-size: 20px;
 
     position: absolute;
-    left: 0;
+    right: 0;
 }
 
 .play-page .submit-key {
@@ -236,7 +236,7 @@
     font-size: 30px;
 
     position: absolute;
-    right: 0;
+    left: 0;
 }
 
 .play-page .spacebar {

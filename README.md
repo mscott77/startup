@@ -219,8 +219,8 @@ I also added persistent storage for different topic lists and game state so you 
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [X] **Backend listens for WebSocket connection** - backend listens for websocket connections and distributes incoming messages to all connected clients
+- [X] **Frontend makes WebSocket connection** - frontend connects to websocket
+- [X] **Data sent over WebSocket connection** - In the suggest page you can send a suggestion which sends a websocket message to the server
+- [X] **WebSocket data displayed** - messages sent by other users will be distributed to all players who are on the suggest page
+- [X] **Application is fully functional** - The app is fully functional. you can login, play the game and it automatically saves your progress, you can switch between multiple different topics, and you can use the web socket "chat" room to suggest new topics or give hints to other players. the chat room is monitored using the third party profanity detector to keep things clean.
