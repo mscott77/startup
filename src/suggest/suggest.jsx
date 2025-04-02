@@ -4,7 +4,6 @@ import './suggest.css'
 
 export function Suggest(props) {
 
-  const profanityAPIurl = "https://vector.profanity.dev"
   const maxNumMsgs = 10;
   const topics = ["Dog Breeds", "Famous Actors", "TV Shows", "Restaurants", "Marvel Characters"];
   const navigate = useNavigate();
@@ -18,9 +17,21 @@ export function Suggest(props) {
     const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     console.log(`connected to websocket on: ${protocol}://${window.location.host}/ws`)
 
-    socket.onmessage = (event) => {
-      const parsedData = JSON.parse(event.data); // Convert back to object
-      setMessages((prevMessages) => [...prevMessages, parsedData.message]);
+    socket.onmessage = async (event) => {
+      let rawData = event.data; // Convert back to object
+      if (rawData instanceof Blob) {
+        rawData = await rawData.text();  // ✅ Convert Blob to text first
+      }
+      const parsedData = rawData;
+      console.log(`recieved a websocket message: ${parsedData}`)
+      setMessages((prev) => {
+        let newMessages = [parsedData,...prev]
+        if (newMessages.length > maxNumMsgs){
+          newMessages = newMessages.slice(0,maxNumMsgs)
+        }
+        return newMessages
+      })
+      setUsersMsg("")
     };
 
     setWs(socket);
